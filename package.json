@@ -1,0 +1,19 @@
+{
+  "name": "150splash",
+  "version": "1.0.0",
+  "description": "splash page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CommerceTrust/150splash.git"
+  },
+  "author": "Integrity",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CommerceTrust/150splash/issues"
+  },
+  "homepage": "https://github.com/CommerceTrust/150splash"
+}
