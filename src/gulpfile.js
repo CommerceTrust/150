@@ -60,7 +60,7 @@ var pleaseOptions  = {
   pseudoElements: true,
   opacity: true,
 
-  import: true,
+  import: false,
   minifier: true, //CSS Wring is being used here
   mqpacker: true,
 
@@ -90,7 +90,7 @@ gulp.task('stylus', function () {
 
 gulp.task('yaml', function () {
   return gulp.src(srcPath.yaml)
-    .pipe(plumber())
+    //.pipe(plumber())
     .pipe(yaml({ space: 2 }))
     .pipe(rename('index.jade.json'))
     .pipe(gulp.dest('./data'))
