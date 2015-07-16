@@ -1,4 +1,9 @@
 // Paths
+var sendto = {
+  dist: '../',
+  browserSyncDirectory: '../'
+};
+
 // var dest = "./";
 // var src  = './src';
 //
@@ -12,38 +17,21 @@
 // Modules
 var gulp           = require('gulp');
 
-// Automagicly refreshes browser when you save
-var browserSync    = require('browser-sync');
+var browserSync    = require('browser-sync');     // Automagicly refreshes browser when you save
 var reload         = browserSync.reload;
-
-//PreProcessor
-var stylus         = require('gulp-stylus');
-
-// SourceMaps for CSS and JS
-var sourcemaps     = require('gulp-sourcemaps');
-
-// PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
-var please         = require('gulp-pleeease');
-
-// SVG Icon Library
-var evilIcons      = require('evil-icons');
-
-// Jade for HTML
-var jade           = require('gulp-jade');
-
-// Enable MarkDown with Jade. :markdown filter
-var marked         = require('marked');
-
-// Prevent pipe from breaking even if and error is encountered
-var plumber        = require('gulp-plumber');
-
-// Used to Create a static DB
-var data           = require('gulp-data');
+var stylus         = require('gulp-stylus');      // PreProcessor
+var sourcemaps     = require('gulp-sourcemaps');  // SourceMaps for CSS and JS
+var please         = require('gulp-pleeease');    // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
+var evilIcons      = require('gulp-evil-icons');       // SVG Icon Library
+var jade           = require('gulp-jade');        // Jade for HTML
+var marked         = require('marked');           // Enable MarkDown with Jade. :markdown filter
+var plumber        = require('gulp-plumber');     // Prevent pipe from breaking even if and error is encountered
+var data           = require('gulp-data');        // Used to Create a static DB
 var path           = require('path');
 var fs             = require('fs');
-var frontMatter    = require('gulp-front-matter');
-var rename         = require('gulp-rename');
-var yaml           = require('gulp-yaml');
+var frontMatter    = require('gulp-front-matter');// Used to enable frontMatter
+var rename         = require('gulp-rename');      // Used to rename files
+var yaml           = require('gulp-yaml');        // Used to convert YAML into JSON for static DB
 
 
 // Pleeease Post-Prosessor options
@@ -86,20 +74,20 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('yaml', function () {
-  return gulp.src(config.src)
+  return gulp.src('./data/data.yaml')
     .pipe(plumber())
     .pipe(yaml({ space: 2 }))
-    .pipe(rename("index.jade.json"))
-    .pipe(gulp.dest(dest))
+    .pipe(rename('index.jade.json'))
+    .pipe(gulp.dest('./data'))
     .pipe(browserSync.reload({stream:true}));
 });
 
 
 gulp.task('jade', function() {
-  return gulp.src('jade/**/*.jade')
-    //.pipe(plumber())
-    //.pipe(frontMatter({ property: 'data' }))
-    //.pipe(data(function(file) {
+  return gulp.src('jade/htdocs/**/*.jade')
+    .pipe(plumber())
+    .pipe(frontMatter({ property: 'data' }))
+    .pipe(data(function(file) {
       // Use this one when not watching and related to current page
       //return require('./src/data/' + path.basename(file.path) + '.json');
 
@@ -107,19 +95,18 @@ gulp.task('jade', function() {
       //return JSON.parse(fs.readFileSync('./src/data/' + path.basename(file.path) + '.json'));
 
       //Use this when watching a global JSON file for all pages
-    //  return JSON.parse(fs.readFileSync('./data/index.jade.json'));
-    //}))
+      return JSON.parse(fs.readFileSync('./data/index.jade.json'));
+    }))
     .pipe(jade({ pretty: true }))
-    //.pipe(evilIcons())
-    //.pipe(rename('index.html'))
-    .pipe(gulp.dest('./'))
+    .pipe(evilIcons())
+    .pipe(gulp.dest(sendto.dist))
     .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "../"
+            baseDir: sendto.browserSyncDirectory
         }
         // ,
         // files: [
@@ -135,6 +122,10 @@ gulp.task('default', ['stylus', 'yaml', 'jade' ,'browser-sync'], function () {
   gulp.watch(sassWatch, ['stylus']);
 });
 
-gulp.task('jb', ['jade' ,'browser-sync'], function () {
+gulp.task('jb', ['yaml', 'jade', 'browser-sync'], function () {
+  //gulp.watch(sassWatch, ['stylus']);
+});
+
+gulp.task('jbc', ['jade' , 'jade', 'browser-sync'], function () {
   //gulp.watch(sassWatch, ['stylus']);
 });
