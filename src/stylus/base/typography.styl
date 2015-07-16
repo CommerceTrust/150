@@ -1,0 +1,50 @@
+// Vars
+base-font-size = 16px
+base-line-height = 1.5
+
+
+// Typefaces
+sans = 'sans-serif'
+serif = 'serif'
+
+
+// Font weights
+xlight = 200
+light = 300
+normal = 400
+semibold = 600
+bold = 700
+
+
+// Line height function
+line-height()
+  base-font-size * base-line-height
+
+
+// Var must be specified after returning the line-height function
+cal-line-height = line-height()
+
+
+html
+  font-size: base-font-size
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+
+body
+  color: charcoal
+  line-height: 1.5
+  font-family: sans
+  //background-image: linear-gradient(transparent, transparent line-height() - 1px, green 1px , transparent)
+  background-size: auto line-height()
+  margin: 0
+
+
+
+// [class*='__heading']
+//   color: green
+//   font-family: serif
+//   font-size: 2.5rem
+//   font-weight: normal
+//   line-height: 1
+//   margin-bottom: 2rem

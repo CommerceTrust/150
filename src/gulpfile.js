@@ -1,3 +1,13 @@
+// TODO
+// Move all to project branch
+// Move content in to Public/Dist directory
+// Serve Browser-Sync from Public/Dist
+// Set up gulp gh-pages
+//
+// Figure out Gulp-Markdown
+
+
+
 // Paths
 var sendto = {
   distribution: '../',
@@ -107,6 +117,7 @@ gulp.task('jade', function() {
       //Use this when watching a global JSON file for all pages
       return JSON.parse(fs.readFileSync('./data/index.jade.json'));
     }))
+    // TODO - pretty: false for HTML minification
     .pipe(jade({ pretty: true }))
     .pipe(evilIcons())
     .pipe(gulp.dest(sendto.distribution))
