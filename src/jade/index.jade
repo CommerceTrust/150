@@ -1,0 +1,38 @@
+//- This is the base template for all the pages in the site
+//- Luckly, this site only needs one layout(base-layout)
+//-
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    //-
+    //- This is a block for handling page specific Titles and Descriptions
+    block seo
+  
+
+    link(rel='stylesheet', type='text/css', href='/style.css')
+
+    //- link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.css')
+    //- script(src='//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.js')
+
+    script(src='/js/vendor/modernizr.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    //- script(src="/global.js?v=0.3")
+
+    link(rel="shortcut icon", sizes="16x16 24x24 32x32 48x48 64x64", href="/favicon.ico")
+    link(rel="apple-touch-icon", sizes="57x57", href="/img/favicon-57.png")
+    link(rel="apple-touch-icon-precomposed", sizes="57x57", href="/img/favicon-57.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="/img/favicon-72.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="/img/favicon-114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="/img/favicon-120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="/img/favicon-144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="/img/favicon-152.png")
+    meta(name="application-name", content="Commerce Trust")
+    meta(name="msapplication-TileImage", content="/img/favicon-144.png")
+    meta(name="msapplication-TileColor", content="#006547")
+
+
+  body
+
+    h1 Hello!

@@ -15,5 +15,22 @@
   "bugs": {
     "url": "https://github.com/CommerceTrust/150splash/issues"
   },
-  "homepage": "https://github.com/CommerceTrust/150splash"
+  "homepage": "https://github.com/CommerceTrust/150splash",
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "evil-icons": "^1.7.6",
+    "fs": "0.0.2",
+    "gulp": "^3.9.0",
+    "gulp-data": "^1.2.0",
+    "gulp-front-matter": "^1.2.3",
+    "gulp-jade": "^1.0.1",
+    "gulp-pleeease": "^1.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5",
+    "gulp-yaml": "^0.2.4",
+    "marked": "^0.3.3",
+    "path": "^0.11.14"
+  }
 }
