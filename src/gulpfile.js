@@ -6,40 +6,39 @@ var sendto = {
 
 var srcPath = {
   jade: 'jade/htdocs/**/*.jade',
+  // TODO - remove ./
   yaml: './data/data.yaml',
-  img: '',
+  img: 'img/**/*',
   stylus: 'stylus/**/*.styl'
 };
 
-// var dest = "./";
-// var src  = './src';
-//
-//
-// var destinations = {
-//   html: "public/",
-//   css: "public/css"
-// };
-
 
 // Modules
-var gulp           = require('gulp');
+var gulp            = require('gulp');
 
-var browserSync    = require('browser-sync');     // Automagicly refreshes browser when you save
-var reload         = browserSync.reload;
-var stylus         = require('gulp-stylus');      // PreProcessor
-var sourcemaps     = require('gulp-sourcemaps');  // SourceMaps for CSS and JS
-var please         = require('gulp-pleeease');    // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
-var evilIcons      = require('gulp-evil-icons');       // SVG Icon Library
-var jade           = require('gulp-jade');        // Jade for HTML
-var marked         = require('marked');           // Enable MarkDown with Jade. :markdown filter
-var plumber        = require('gulp-plumber');     // Prevent pipe from breaking even if and error is encountered
-var data           = require('gulp-data');        // Used to Create a static DB
-var path           = require('path');
-var fs             = require('fs');
-var frontMatter    = require('gulp-front-matter');// Used to enable frontMatter
-var rename         = require('gulp-rename');      // Used to rename files
-var yaml           = require('gulp-yaml');        // Used to convert YAML into JSON for static DB
+var browserSync     = require('browser-sync');     // Automagicly refreshes browser when you save
+var reload          = browserSync.reload;
+var stylus          = require('gulp-stylus');      // PreProcessor
+var sourcemaps      = require('gulp-sourcemaps');  // SourceMaps for CSS and JS
+var please          = require('gulp-pleeease');    // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
+var evilIcons       = require('gulp-evil-icons');       // SVG Icon Library
+var jade            = require('gulp-jade');        // Jade for HTML
+var marked          = require('marked');           // Enable MarkDown with Jade. :markdown filter
+var plumber         = require('gulp-plumber');     // Prevent pipe from breaking even if and error is encountered
+var data            = require('gulp-data');        // Used to Create a static DB
+var path            = require('path');
+var fs              = require('fs');
+var frontMatter     = require('gulp-front-matter');// Used to enable frontMatter
+var rename          = require('gulp-rename');      // Used to rename files
+var yaml            = require('gulp-yaml');        // Used to convert YAML into JSON for static DB
+var runSequence     = require('run-sequence');     // Used to run tasks in a sequence
+var changed         = require('gulp-changed');     // Used to check if a file has changed
+var imagemin        = require('gulp-imagemin');    // Used to compress images
+var pngquant        = require('imagemin-pngquant');// Used to compress pngs
+var notify          = require('gulp-notify');       // Used to output messages during gulp tasks
 
+// TODO - add JS minification, linting, and concatenation
+//var uglify
 
 // Pleeease Post-Prosessor options
 var pleaseOptions  = {
@@ -78,13 +77,19 @@ gulp.task('stylus', function () {
     .pipe(reload({ stream: true }));
 });
 
+
 gulp.task('yaml', function () {
-  return gulp.src(scrPath.yaml)
+  return gulp.src(srcPath.yaml)
     .pipe(plumber())
     .pipe(yaml({ space: 2 }))
     .pipe(rename('index.jade.json'))
     .pipe(gulp.dest('./data'))
     .pipe(browserSync.reload({stream:true}));
+});
+
+
+gulp.task('sequence', function(callback) {
+  runSequence('yaml', 'jade', callback);
 });
 
 
@@ -108,11 +113,13 @@ gulp.task('jade', function() {
     .pipe(browserSync.reload({stream:true}));
 });
 
+
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: sendto.browserSyncDirectory
         }
+        // This is here for special cases when reloading of other files is needed
         // ,
         // files: [
         //   themePath + '/**/*.php',
@@ -121,14 +128,32 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('gs', ['stylus','browser-sync'], function () {
-  gulp.watch(srcPath.stylus, ['stylus']);
+
+gulp.task('imgs', function () {
+  return gulp.src(srcPath.img)
+    .pipe(changed(sendto.distribution))
+    // ngmin will only get the files that
+    // changed since the last time it was run
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest(sendto.distribution + '/img'));
 });
 
-gulp.task('default', ['stylus', 'yaml', 'jade' ,'browser-sync'], function () {
-  gulp.watch(sassWatch, ['stylus']);
+
+
+gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
+  gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
+  gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
+  gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
+  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
 });
 
-gulp.task('jb', ['stylus', 'yaml', 'jade', 'browser-sync'], function () {
-  //gulp.watch(sassWatch, ['stylus']);
+
+gulp.task('prod', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
+  gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
+  gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
+  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
 });
