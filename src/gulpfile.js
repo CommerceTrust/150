@@ -1,7 +1,14 @@
 // Paths
 var sendto = {
-  dist: '../',
+  distribution: '../',
   browserSyncDirectory: '../'
+};
+
+var srcPath = {
+  jade: 'jade/htdocs/**/*.jade',
+  yaml: './data/data.yaml',
+  img: '',
+  stylus: 'stylus/**/*.styl'
 };
 
 // var dest = "./";
@@ -59,22 +66,20 @@ var pleaseOptions  = {
 };
 
 
-
-
-
 gulp.task('stylus', function () {
-  return gulp.src('/stylus/*.styl')
+  return gulp.src(srcPath.stylus)
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus())
-    .on('error', handleErrors)
+    //.on('error', handleErrors)
     .pipe(sourcemaps.write())
     .pipe(please(pleaseOptions))
-    .pipe(gulp.dest(dest))
+    .pipe(gulp.dest(sendto.distribution))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task('yaml', function () {
-  return gulp.src('./data/data.yaml')
+  return gulp.src(scrPath.yaml)
     .pipe(plumber())
     .pipe(yaml({ space: 2 }))
     .pipe(rename('index.jade.json'))
@@ -84,7 +89,7 @@ gulp.task('yaml', function () {
 
 
 gulp.task('jade', function() {
-  return gulp.src('jade/htdocs/**/*.jade')
+  return gulp.src(srcPath.jade)
     .pipe(plumber())
     .pipe(frontMatter({ property: 'data' }))
     .pipe(data(function(file) {
@@ -99,7 +104,7 @@ gulp.task('jade', function() {
     }))
     .pipe(jade({ pretty: true }))
     .pipe(evilIcons())
-    .pipe(gulp.dest(sendto.dist))
+    .pipe(gulp.dest(sendto.distribution))
     .pipe(browserSync.reload({stream:true}));
 });
 
@@ -116,16 +121,14 @@ gulp.task('browser-sync', function() {
     });
 });
 
-
+gulp.task('gs', ['stylus','browser-sync'], function () {
+  gulp.watch(srcPath.stylus, ['stylus']);
+});
 
 gulp.task('default', ['stylus', 'yaml', 'jade' ,'browser-sync'], function () {
   gulp.watch(sassWatch, ['stylus']);
 });
 
-gulp.task('jb', ['yaml', 'jade', 'browser-sync'], function () {
-  //gulp.watch(sassWatch, ['stylus']);
-});
-
-gulp.task('jbc', ['jade' , 'jade', 'browser-sync'], function () {
+gulp.task('jb', ['stylus', 'yaml', 'jade', 'browser-sync'], function () {
   //gulp.watch(sassWatch, ['stylus']);
 });
