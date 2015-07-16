@@ -29,13 +29,13 @@ var please         = require('gulp-pleeease');
 var evilIcons      = require('evil-icons');
 
 // Jade for HTML
-var jade         = require('gulp-jade');
+var jade           = require('gulp-jade');
 
 // Enable MarkDown with Jade. :markdown filter
 var marked         = require('marked');
 
 // Prevent pipe from breaking even if and error is encountered
-var plumber = require('gulp-plumber');
+var plumber        = require('gulp-plumber');
 
 // Used to Create a static DB
 var data           = require('gulp-data');
@@ -96,8 +96,8 @@ gulp.task('yaml', function () {
 
 
 gulp.task('jade', function() {
-  return gulp.src('/src/jade/**/*.jade')
-    .pipe(plumber())
+  return gulp.src('jade/**/*.jade')
+    //.pipe(plumber())
     //.pipe(frontMatter({ property: 'data' }))
     //.pipe(data(function(file) {
       // Use this one when not watching and related to current page
@@ -110,7 +110,7 @@ gulp.task('jade', function() {
     //  return JSON.parse(fs.readFileSync('./data/index.jade.json'));
     //}))
     .pipe(jade({ pretty: true }))
-    .pipe(evilIcons())
+    //.pipe(evilIcons())
     //.pipe(rename('index.html'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.reload({stream:true}));
@@ -119,7 +119,7 @@ gulp.task('jade', function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "../"
         }
         // ,
         // files: [
@@ -133,4 +133,8 @@ gulp.task('browser-sync', function() {
 
 gulp.task('default', ['stylus', 'yaml', 'jade' ,'browser-sync'], function () {
   gulp.watch(sassWatch, ['stylus']);
+});
+
+gulp.task('jb', ['jade' ,'browser-sync'], function () {
+  //gulp.watch(sassWatch, ['stylus']);
 });
