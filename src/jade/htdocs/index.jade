@@ -2,9 +2,7 @@
 yo: hello
 ---
 
-//- This is the base template for all the pages in the site
-//- Luckly, this site only needs one layout(base-layout)
-//-
+
 doctype html
 html
   head
@@ -37,10 +35,10 @@ html
   body
     //- h1= yo
     //- p= lorem.s
-    header
-      .brand
-        img.brand__logo--col-4-12(src='img/CommerceFDIC.png', alt='Commerce Bank logo')
-      .social-nav--col-3-12
+    header.header
+      .header__logo--col-4-12
+        img(src='img/CommerceFDIC.png', alt='Commerce Bank logo')
+      .header__social-nav--col-3-12
         icon(name="ei-sc-facebook", size="s")
         icon(name="ei-sc-linkedin", size="s")
         icon(name="ei-sc-twitter", size="s")
