@@ -10,7 +10,7 @@
 
 // Paths
 var sendto = {
-  distribution: '../',
+  distribution: '../dist',
   browserSyncDirectory: '../'
 };
 
@@ -47,6 +47,14 @@ var imagemin        = require('gulp-imagemin');    // Used to compress images
 var pngquant        = require('imagemin-pngquant');// Used to compress pngs
 var notify          = require('gulp-notify');       // Used to output messages during gulp tasks
 
+var ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
+
 // TODO - add JS minification, linting, and concatenation
 //var uglify
 
@@ -76,7 +84,7 @@ var pleaseOptions  = {
 
 
 gulp.task('stylus', function () {
-  return gulp.src(srcPath.stylus)
+  return gulp.src('stylus/style.styl')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus())
