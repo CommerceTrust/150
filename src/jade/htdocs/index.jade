@@ -1,5 +1,7 @@
 ---
 yo: hello
+title: Add SEO title here
+description: Add SEO description here
 ---
 
 
@@ -10,7 +12,10 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     //-
     //- This is a block for handling page specific Titles and Descriptions
-    block seo
+    //- block seo
+      
+    title= title
+    meta(name="description" content="#{description}")
   
     link(href="http://fonts.googleapis.com/css?family=Playfair\+Display:400,400italic", rel="stylesheet", type="text/css")
     link(href="http://fonts.googleapis.com/css?family=News\+Cycle:400,700", rel="stylesheet", type="text/css")
