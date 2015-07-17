@@ -22,7 +22,7 @@ var gulp            = require('gulp');
 var browserSync     = require('browser-sync');     // Automagicly refreshes browser when you save
 var reload          = browserSync.reload;
 var stylus          = require('gulp-stylus');      // PreProcessor
-// var rupture         = require('rupture');          // Use Rupture for 
+// var rupture         = require('rupture');          // Use Rupture for
 var sourcemaps      = require('gulp-sourcemaps');  // SourceMaps for CSS and JS
 var please          = require('gulp-pleeease');    // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
 var evilIcons       = require('gulp-evil-icons');       // SVG Icon Library
@@ -43,7 +43,8 @@ var notify          = require('gulp-notify');      // Used to output messages du
 
 var ghPages         = require('gulp-gh-pages');    // Used to move Dist to gh-pages
 
-gulp.task('deploy', function() {
+// Deploy active branch to gh-pages branch
+gulp.task('ghp', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
