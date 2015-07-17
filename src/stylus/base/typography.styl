@@ -5,8 +5,10 @@ base-line-height = 1.5
 
 // Typefaces
 typeface = {
-  sans: News Cycle,
-  serif: Playfair Display
+  sans: sans-serif,
+  serif: serif,
+  sans-gf: News Cycle,
+  serif-gf: Playfair Display
 }
 
 
@@ -20,12 +22,12 @@ bold = 700
 
 
 // Line height function
-line-height()
+line-height-function()
   base-font-size * base-line-height
 
 
 // Var must be specified after returning the line-height function
-cal-line-height = line-height()
+cal-line-height = line-height-function()
 
 
 html
@@ -35,11 +37,9 @@ html
 
 
 body
-  color charcoal
-  line-height 1.5
+  color lead
   font-family: typeface.sans, sans-serif
-  //background-image: linear-gradient(transparent, transparent line-height() - 1px, green 1px , transparent)
-  background-size auto line-height()
+  line-height base-line-height
   margin 0
 
 
@@ -56,9 +56,10 @@ body
 a
   text-decoration: none
   color: green
+
   &:hover
     color: nightgreen
-    text-decoration: underline
+    text-decoration: none
 
 
 // Buttons
