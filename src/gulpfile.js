@@ -10,8 +10,8 @@
 
 // Paths
 var sendto = {
-  distribution: '../dist',
-  browserSyncDirectory: '../'
+  z: '../dist',
+  browserSyncDirectory: '../dist'
 };
 
 var srcPath = {
@@ -136,7 +136,7 @@ gulp.task('jade', function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: sendto.browserSyncDirectory
+            baseDir: distribution
         }
         // This is here for special cases when reloading of other files is needed
         // ,
