@@ -12,6 +12,8 @@ html
     //- This is a block for handling page specific Titles and Descriptions
     block seo
   
+    link(href="http://fonts.googleapis.com/css?family=Playfair\+Display:400,400italic", rel="stylesheet", type="text/css")
+    link(href="http://fonts.googleapis.com/css?family=News\+Cycle:400,700", rel="stylesheet", type="text/css")
 
     link(rel='stylesheet', type='text/css', href='style.css')
 
@@ -32,7 +34,7 @@ html
     meta(name="msapplication-TileColor", content="#006547")
 
 
-  body
+  body.splash-page
     //- h1= yo
     //- p= lorem.s
     header.header
@@ -62,4 +64,4 @@ html
         p We hope you will enjoy the brief summary of our history in the timeline which follows, and encourage you to read the fuller history available online as a downloadable PDF. 
         
         p
-          a.button(href="timeline.pdf") Download Timeline
+          a.main__button(href="timeline.pdf") Download Timeline

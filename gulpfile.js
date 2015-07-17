@@ -1,31 +1,24 @@
 // TODO
-// Move all to project branch
-// Move content in to Public/Dist directory
-// Serve Browser-Sync from Public/Dist
-// Set up gulp gh-pages
-//
-// Figure out Gulp-Markdown
 
+// Set up gulp gh-pages
+// Figure out Gulp-Markdown
 
 
 // Paths
 var sendto = {
-  z: '../dist',
-  browserSyncDirectory: '../dist'
+  dist: './dist'
 };
 
 var srcPath = {
-  jade: 'jade/htdocs/**/*.jade',
-  // TODO - remove ./
-  yaml: './data/data.yaml',
-  img: 'img/**/*',
-  stylus: 'stylus/**/*.styl'
+  jade: './src/jade/htdocs/**/*.jade',
+  yaml: './src/data/data.yaml',
+  img: './src/img/**/*',
+  stylus: './src/stylus/**/*.styl'
 };
 
 
 // Modules
 var gulp            = require('gulp');
-
 var browserSync     = require('browser-sync');     // Automagicly refreshes browser when you save
 var reload          = browserSync.reload;
 var stylus          = require('gulp-stylus');      // PreProcessor
@@ -45,9 +38,9 @@ var runSequence     = require('run-sequence');     // Used to run tasks in a seq
 var changed         = require('gulp-changed');     // Used to check if a file has changed
 var imagemin        = require('gulp-imagemin');    // Used to compress images
 var pngquant        = require('imagemin-pngquant');// Used to compress pngs
-var notify          = require('gulp-notify');       // Used to output messages during gulp tasks
+var notify          = require('gulp-notify');      // Used to output messages during gulp tasks
 
-var ghPages = require('gulp-gh-pages');
+var ghPages         = require('gulp-gh-pages');    // Used to move Dist to gh-pages
 
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
@@ -84,14 +77,14 @@ var pleaseOptions  = {
 
 
 gulp.task('stylus', function () {
-  return gulp.src('stylus/style.styl')
+  return gulp.src('src/stylus/style.styl')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus())
     //.on('error', handleErrors)
     .pipe(sourcemaps.write())
     .pipe(please(pleaseOptions))
-    .pipe(gulp.dest(sendto.distribution))
+    .pipe(gulp.dest(sendto.dist))
     .pipe(reload({ stream: true }));
 });
 
@@ -101,7 +94,7 @@ gulp.task('yaml', function () {
     //.pipe(plumber())
     .pipe(yaml({ space: 2 }))
     .pipe(rename('index.jade.json'))
-    .pipe(gulp.dest('./data'))
+    .pipe(gulp.dest('./src/data'))
     .pipe(browserSync.reload({stream:true}));
 });
 
@@ -123,12 +116,12 @@ gulp.task('jade', function() {
       //return JSON.parse(fs.readFileSync('./src/data/' + path.basename(file.path) + '.json'));
 
       //Use this when watching a global JSON file for all pages
-      return JSON.parse(fs.readFileSync('./data/index.jade.json'));
+      return JSON.parse(fs.readFileSync('./src/data/index.jade.json'));
     }))
     // TODO - pretty: false for HTML minification
     .pipe(jade({ pretty: true }))
     .pipe(evilIcons())
-    .pipe(gulp.dest(sendto.distribution))
+    .pipe(gulp.dest(sendto.dist))
     .pipe(browserSync.reload({stream:true}));
 });
 
@@ -136,7 +129,7 @@ gulp.task('jade', function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: distribution
+            baseDir: sendto.dist
         }
         // This is here for special cases when reloading of other files is needed
         // ,
@@ -150,7 +143,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('imgs', function () {
   return gulp.src(srcPath.img)
-    .pipe(changed(sendto.distribution))
+    .pipe(changed(sendto.dist))
     // ngmin will only get the files that
     // changed since the last time it was run
     .pipe(imagemin({
@@ -158,7 +151,7 @@ gulp.task('imgs', function () {
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest(sendto.distribution + '/img'));
+    .pipe(gulp.dest(sendto.dist + '/img'));
 });
 
 
@@ -170,7 +163,7 @@ gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], functio
   gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
 });
 
-
+// Not configured yet
 gulp.task('prod', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
   gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
   gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
