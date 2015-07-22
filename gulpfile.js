@@ -9,7 +9,7 @@ var sendto = {
 };
 
 var srcPath = {
-  jade: './src/jade/htdocs/**/*.jade',
+  jade: './src/jade/**/*.jade',
   yaml: './src/data/data.yaml',
   img: './src/img/**/*',
   stylus: './src/stylus/**/*.styl'
@@ -169,13 +169,6 @@ gulp.task('ghp', function() {
 gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
   gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
   gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
-  gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
-  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
-});
-
-// Not configured yet
-gulp.task('prod', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
-  gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
   gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
   gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
 });
