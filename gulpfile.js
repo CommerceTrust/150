@@ -9,10 +9,13 @@ var sendto = {
 };
 
 var srcPath = {
-  jade: './src/jade/**/*.jade',
+  jade: './src/jade/htdocs/**/*.jade',
+  jadewatch: './src/jade/**/*.jade',
   yaml: './src/data/data.yaml',
   img: './src/img/**/*',
-  stylus: './src/stylus/**/*.styl'
+  stylus: './src/stylus/**/*.styl',
+  js: './src/js/**/*.js'
+
 };
 
 
@@ -157,6 +160,25 @@ gulp.task('imgs', function () {
 
 
 
+// Copy js
+gulp.task('copy-js', function() {
+    gulp.src(srcPath.js)
+    .pipe(gulp.dest(sendto.dist + '/js'));
+});
+
+//
+// gulp.task('copy-favicon', function() {
+//     gulp.src(srcPath.favicon)
+//     .pipe(gulp.dest(sendto.dist));
+// });
+//
+//
+// gulp.task('copy-robots', function() {
+//     gulp.src(srcPath.robots)
+//     .pipe(gulp.dest(sendto.dist));
+// });
+//
+
 
 // Deploy active branch to gh-pages branch
 gulp.task('ghp', function() {
@@ -170,5 +192,5 @@ gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], functio
   gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
   gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
   gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
-  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
+  gulp.watch(srcPath.jadewatch, ['jade']);      // Run jade task when any jade file changes
 });
