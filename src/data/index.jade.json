@@ -3,5 +3,55 @@
     "s": "Lorem ipsum dolor sit amet, consectetur adipisicing elite",
     "t": "Lorem ipsum dolor",
     "p": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  }
+  },
+  "slides": [
+    {
+      "year": 2012,
+      "title": "hello",
+      "subtitle": "what up",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc",
+      "img": "1.png",
+      "layout": "left"
+    },
+    {
+      "year": 2010,
+      "title": "CREAM",
+      "subtitle": "what up",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc",
+      "img": "2.png",
+      "layout": "right"
+    },
+    {
+      "year": 2008,
+      "title": "Blah blah blah",
+      "subtitle": "what up",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc",
+      "img": "1.png",
+      "layout": "right"
+    },
+    {
+      "year": 2001,
+      "title": "I hate this background color!!! WFT",
+      "subtitle": "what up",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc",
+      "img": "3.png",
+      "layout": "right"
+    },
+    {
+      "year": 1998,
+      "title": "Let's polish some turds",
+      "subtitle": "what up",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc",
+      "img": "1.png",
+      "layout": "right"
+    },
+    {
+      "year": 1991,
+      "title": "Cards for LIFE",
+      "subtitle": "what up",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc",
+      "img": "4.png",
+      "layout": "right"
+    }
+  ]
 }
