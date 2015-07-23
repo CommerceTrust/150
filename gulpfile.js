@@ -1,6 +1,5 @@
 // TODO
 
-// Set up gulp gh-pages
 // Figure out Gulp-Markdown
 
 
@@ -11,45 +10,47 @@ var sendto = {
 
 var srcPath = {
   jade: './src/jade/htdocs/**/*.jade',
+  jadewatch: './src/jade/**/*.jade',
   yaml: './src/data/data.yaml',
   img: './src/img/**/*',
-  stylus: './src/stylus/**/*.styl'
+  stylus: './src/stylus/**/*.styl',
+  js: './src/js/**/*.js'
+
 };
 
 
 // Modules
 var gulp            = require('gulp');
-var browserSync     = require('browser-sync');     // Automagicly refreshes browser when you save
+var browserSync     = require('browser-sync');      // Automagicly refreshes browser when you save
 var reload          = browserSync.reload;
-var stylus          = require('gulp-stylus');      // PreProcessor
-// var rupture         = require('rupture');          // Use Rupture for
-var sourcemaps      = require('gulp-sourcemaps');  // SourceMaps for CSS and JS
-var please          = require('gulp-pleeease');    // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
-var evilIcons       = require('gulp-evil-icons');       // SVG Icon Library
-var jade            = require('gulp-jade');        // Jade for HTML
-var marked          = require('marked');           // Enable MarkDown with Jade. :markdown filter
-var plumber         = require('gulp-plumber');     // Prevent pipe from breaking even if and error is encountered
-var data            = require('gulp-data');        // Used to Create a static DB
+var stylus          = require('gulp-stylus');       // PreProcessor
+// var rupture         = require('rupture');        // Use Rupture for
+var sourcemaps      = require('gulp-sourcemaps');   // SourceMaps for CSS and JS
+var please          = require('gulp-pleeease');     // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
+var evilIcons       = require('gulp-evil-icons');   // SVG Icon Library
+var jade            = require('gulp-jade');         // Jade for HTML
+var marked          = require('marked');            // Enable MarkDown with Jade. :markdown filter
+var plumber         = require('gulp-plumber');      // Prevent pipe from breaking even if and error is encountered
+var data            = require('gulp-data');         // Used to Create a static DB
 var path            = require('path');
 var fs              = require('fs');
-var frontMatter     = require('gulp-front-matter');// Used to enable frontMatter
-var rename          = require('gulp-rename');      // Used to rename files
-var yaml            = require('gulp-yaml');        // Used to convert YAML into JSON for static DB
-var runSequence     = require('run-sequence');     // Used to run tasks in a sequence
-var changed         = require('gulp-changed');     // Used to check if a file has changed
-var imagemin        = require('gulp-imagemin');    // Used to compress images
-var pngquant        = require('imagemin-pngquant');// Used to compress pngs
-var notify          = require('gulp-notify');      // Used to output messages during gulp tasks
+var frontMatter     = require('gulp-front-matter'); // Used to enable frontMatter
+var rename          = require('gulp-rename');       // Used to rename files
+var yaml            = require('gulp-yaml');         // Used to convert YAML into JSON for static DB
+var runSequence     = require('run-sequence');      // Used to run tasks in a sequence
+var changed         = require('gulp-changed');      // Used to check if a file has changed
+var imagemin        = require('gulp-imagemin');     // Used to compress images
+var pngquant        = require('imagemin-pngquant'); // Used to compress pngs
+var notify          = require('gulp-notify');       // Used to output messages during gulp tasks
 
-var ghPages         = require('gulp-gh-pages');    // Used to move Dist to gh-pages
+var ghPages         = require('gulp-gh-pages');     // Used to move Dist to gh-pages
 
-// Deploy active branch to gh-pages branch
-gulp.task('ghp', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
-});
+// Production tasks for later
+// var argv            = require('yargs').argv;        // Used to notice flags in your gulp commands
+// var gulpif          = require('gulp-if');           // Used to create conditionals in your gulp tasks
+// var production      = !!(argv.prod);                // true if --prod flag is used
 
-
+//var uglify = require('gulp-uglify');
 // TODO - add JS minification, linting, and concatenation
 //var uglify
 
@@ -64,7 +65,7 @@ var pleaseOptions  = {
   opacity: true,
 
   import: false,
-  minifier: true, //CSS Wring is being used here
+  minifier: false, //CSS Wring is being used here
   mqpacker: true,
 
   sourcemaps: false,
@@ -81,6 +82,7 @@ var pleaseOptions  = {
 gulp.task('stylus', function () {
   return gulp.src('src/stylus/style.styl')
     .pipe(plumber())
+    //.pipe(gulpif(production, uglify()), sourcemaps.init())
     .pipe(sourcemaps.init())
     .pipe(stylus())
     //.on('error', handleErrors)
@@ -158,16 +160,37 @@ gulp.task('imgs', function () {
 
 
 
+// Copy js
+gulp.task('copy-js', function() {
+    gulp.src(srcPath.js)
+    .pipe(gulp.dest(sendto.dist + '/js'));
+});
+
+//
+// gulp.task('copy-favicon', function() {
+//     gulp.src(srcPath.favicon)
+//     .pipe(gulp.dest(sendto.dist));
+// });
+//
+//
+// gulp.task('copy-robots', function() {
+//     gulp.src(srcPath.robots)
+//     .pipe(gulp.dest(sendto.dist));
+// });
+//
+
+
+// Deploy active branch to gh-pages branch
+gulp.task('ghp', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
+
+
 gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
   gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
   gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
   gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
-  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
-});
-
-// Not configured yet
-gulp.task('prod', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
-  gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
-  gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
-  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
+  gulp.watch(srcPath.jadewatch, ['jade']);      // Run jade task when any jade file changes
 });

@@ -1,0 +1,180 @@
+@charset "utf-8";
+.dsk-not-supported,.dsk-supported
+  background dirt
+  background-size 100% 100%
+
+// Apply these styles as a fallback
+.dsk-not-supported
+  color #fff
+  text-shadow 1px 1px 0px rgba(0,0,0,.2)
+  padding 1px 0
+
+  .step
+    width 800px
+    margin 20px auto
+    background rgba(0,0,0,.2)
+    padding 20px
+    border-radius 5px
+
+  .year
+    background none
+    padding 0
+    filter none
+    _filter none
+
+  .dsk-info
+    padding-bottom 20px
+
+    h2
+      display none
+
+  .dsk-circle
+    font-size 36px
+    color rgba(255,255,255,.8)
+    text-shadow 1px 1px 1px rgba(0,0,0,.2)
+
+
+.dsk-supported
+  position relative
+  width 100%
+  min-width 100px
+  margin 0 auto
+  height 550px
+  overflow hidden
+
+  .dsk-linewrapper
+    height 6rem
+    bottom 20%
+    width 100%
+    background rgba(255,255,255,.3)
+    box-shadow 0 1px rgba(255, 255, 255, 0.15) inset
+    position absolute
+    bottom 20%
+    color #fff
+
+  .dsk-wrapper
+    outline none
+    overflow visible !important
+
+  .dsk-circle
+    background white
+    border-radius 50%
+    box-shadow 0 0 2px rgba(0,0,0,.1)
+    cursor pointer
+    width 1rem
+    height (@width)
+    position relative
+    transition all 0.5s ease-in
+    user-select none
+
+  .active
+    .dsk-circle
+      background charcoal
+      background-clip padding-box
+      //width 2rem
+      //height (@width)
+
+    .dsk-content
+      opacity 1
+      transform scale(1)
+      transition all 1s ease-in-out .5s
+
+    .dsk-circle-date
+      color charcoal
+
+
+  .step
+    width 400px
+    position relative
+
+  .dsk-nav
+    position absolute
+    height 32px
+    top 10px
+    right 10px
+
+    span
+      background url(img/prev.png) no-repeat center center rgba(255,255,255,.3)
+      border-radius 3px
+      box-shadow 0 1px rgba(255, 255, 255, 0.25) inset
+      cursor pointer
+      display inline-block
+      width 30px
+      height 30px
+
+      margin 0 1px
+      transition background-color 0.3s ease-in
+
+      &:hover
+        background-color rgba(255,255,255,.5)
+
+    .dsk-pre
+      border-radius 3px 0 0 3px
+
+    .dsk-next
+      border-radius 0 3px 3px 0
+      background-image url(img/next.png)
+      margin-right 20px
+
+    .dsk-autoplay
+      background-image url(img/play.png)
+
+    .playing
+      background-image url(img/pause.png)
+
+  .dsk-content
+    position absolute
+    top -350px
+    height 300px
+    width 800px
+    left -200px
+    opacity 0
+    transition all 0.5s ease-in
+    transform scale(0.5)
+
+    & > img
+      max-width 256px
+      max-height 300px
+      position absolute
+      right 0px
+      top 0px
+
+
+  //
+  // Edit slide typography here
+  .dsk-info
+    width 450px
+    text-shadow 2px 2px 2px rgba(0,0,0,.2)
+
+    .date__heading
+      color #fff
+      margin 0 0 20px 0
+      font-weight normal
+
+    p
+      font-size 1.5rem
+      margin 0
+
+  .dsk-year-info
+    font-size 24px
+    padding 10px
+
+.dsk-circle-date
+  color white
+  font-family: Serif.font
+  font-weight: Serif.weight.normal
+  transition all 0.5s ease-in
+  transform translateX(-1rem)
+
+
+// End slide typography here
+//
+
+.dsk-fullscreen
+  width 100%
+  height 100%
+
+
+@media screen, (max-width: 650px)
+  .dsk-supported
+    height 400px
