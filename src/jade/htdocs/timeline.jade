@@ -5,7 +5,6 @@ description: As we mark the 150th anniversary of the bank, we have selected some
 ---
   
   
-  
 extends ../layout/timeline-base
 
 block seo
@@ -18,73 +17,10 @@ block content
   #dasky
     each slide in slides
       .step
-        .dsk-circle=slide.year
-        //-h2.dsk-circle-title Daskey Timeline Slider
+        .dsk-circle
+        h2.dsk-circle-date=slide.year
         .dsk-content
           .dsk-info
-            h2=slide.year
+            h2.date__heading=slide.year
             p=slide.content
-            //-a.dsk-link(href="#") Read More
           img(src="/img/#{slide.img}", alt="")
-    
-    //- 
-    //-     
-    //-     
-    //- .step.year
-    //-   .dsk-titlenode  2012 
-    //-   .dsk-content
-    //-     p.dsk-year-info  A Timeline Slider For You!  :) 
-    //- .step
-    //-   .dsk-circle 05/01
-    //-   h2.dsk-circle-title Daskey Timeline Slider
-    //-   .dsk-content
-    //-     .dsk-info
-    //-       h2 Daskey Timeline Slider 
-    //-       p
-    //-         | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...
-    //-       a.dsk-link(href="#") Read More
-    //-     img(src="/img/1.png", alt="")
-    //- .step
-    //-   .dsk-circle 12/16
-    //-   h2.dsk-circle-title Stylish Appearance
-    //-   .dsk-content
-    //-     .dsk-info
-    //-       h2 Stylish Appearance 
-    //-       p
-    //-         | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...
-    //-       a.dsk-link(href="#") Read More
-    //-     img(src="/img/2.png", alt="")
-    //- .step.year
-    //-   .dsk-titlenode  2013 
-    //-   .dsk-content
-    //-     p.dsk-year-info  Use For Prouct Timeline , Showcase And So On! 
-    //- .step
-    //-   .dsk-circle 01/20
-    //-   h2.dsk-circle-title Fallback To Old Browsers
-    //-   .dsk-content
-    //-     .dsk-info
-    //-       h2 Fallback To Old Browsers 
-    //-       p
-    //-         | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...
-    //-       a.dsk-link(href="#") Read More
-    //-     img(src="/img/3.png", alt="")
-    //- .step
-    //-   .dsk-circle 07/15
-    //-   h2.dsk-circle-title CSS3 Animated
-    //-   .dsk-content
-    //-     .dsk-info
-    //-       h2 CSS3 Animated 
-    //-       p
-    //-         | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...
-    //-       a.dsk-link(href="#") Read More
-    //-     img(src="/img/4.png", alt="")
-    //- .step
-    //-   .dsk-circle 11/03
-    //-   h2.dsk-circle-title Easy To Use
-    //-   .dsk-content
-    //-     .dsk-info
-    //-       h2 Easy To Use
-    //-       p
-    //-         | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...
-    //-       a.dsk-link(href="#") Read More
-    //-     img(src="/img/5.png", alt="")

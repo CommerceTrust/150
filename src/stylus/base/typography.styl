@@ -4,21 +4,23 @@ base-line-height = 1.5
 
 
 // Typefaces
-typeface = {
-  sans: sans-serif,
-  serif: serif,
-  sans-gf: News Cycle,
-  serif-gf: Playfair Display
+
+Sans = {
+  font: News Cycle\, sans-serif,
+  weight: {
+    normal: 400,
+    bold: 700
+  }
 }
 
-
-
-// Font weights
-xlight = 200
-light = 300
-normal = 400
-semibold = 600
-bold = 700
+Serif = {
+  font: Playfair Display\, serif,
+  weight: {
+    normal: 400,
+    bold: 700,
+    ultra: 900
+  }
+}
 
 
 // Line height function
@@ -38,14 +40,14 @@ html
 
 body
   color lead
-  font-family: typeface.sans, sans-serif
+  font-family: Sans.font
   line-height base-line-height
   margin 0
 
 
 [class*='__heading']
   color green
-  font-family: typeface.serif, serif
+  font-family: Serif.font
   font-size 2.5rem
   font-weight normal
   line-height 1
