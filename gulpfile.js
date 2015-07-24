@@ -49,6 +49,20 @@ var ghPages         = require('gulp-gh-pages');     // Used to move Dist to gh-p
 // var argv            = require('yargs').argv;        // Used to notice flags in your gulp commands
 // var gulpif          = require('gulp-if');           // Used to create conditionals in your gulp tasks
 // var production      = !!(argv.prod);                // true if --prod flag is used
+//
+
+
+var uglify          = require('gulp-uglify');
+var concat          = require('gulp-concat');
+
+
+gulp.task('js', function () {
+    gulp.src(srcPath.js)
+    .pipe(concat('global.js'))
+    //.pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest(sendto.dist + '/js'));
+});
 
 //var uglify = require('gulp-uglify');
 // TODO - add JS minification, linting, and concatenation
@@ -161,10 +175,10 @@ gulp.task('imgs', function () {
 
 
 // Copy js
-gulp.task('copy-js', function() {
-    gulp.src(srcPath.js)
-    .pipe(gulp.dest(sendto.dist + '/js'));
-});
+// gulp.task('copy-js', function() {
+//     gulp.src(srcPath.js)
+//     .pipe(gulp.dest(sendto.dist + '/js'));
+// });
 
 //
 // gulp.task('copy-favicon', function() {
@@ -193,4 +207,5 @@ gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], functio
   gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
   gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
   gulp.watch(srcPath.jadewatch, ['jade']);      // Run jade task when any jade file changes
+  gulp.watch(srcPath.js, ['js']);      // Run jade task when any jade file changes
 });
