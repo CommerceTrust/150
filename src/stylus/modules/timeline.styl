@@ -1,4 +1,27 @@
-@charset "utf-8";
+// UI
+//
+// timeline
+timeline-bg = white
+active-color = charcoal
+not-active-color = white
+
+fade = all 1s ease-in
+
+// Slide settings
+//
+// Heading
+content-color = charcoal
+// text
+//
+// Image
+
+.timeline
+  position relative
+
+
+
+
+
 .dsk-not-supported,.dsk-supported
   background dirt
   background-size 100% 100%
@@ -42,6 +65,7 @@
   height 550px
   overflow hidden
 
+  // Timeline bar
   .dsk-linewrapper
     height 6rem
     bottom 20%
@@ -50,26 +74,34 @@
     box-shadow 0 1px rgba(255, 255, 255, 0.15) inset
     position absolute
     bottom 20%
-    color #fff
+    color timeline-bg
 
   .dsk-wrapper
     outline none
     overflow visible !important
 
+  // Timeline Dot not active
   .dsk-circle
-    background white
+    background not-active-color
     border-radius 50%
     box-shadow 0 0 2px rgba(0,0,0,.1)
     cursor pointer
     width 1rem
     height (@width)
     position relative
-    transition all 0.5s ease-in
+    transition fade
     user-select none
+
+  .dsk-circle-date
+    color not-active-color
+    font-family: Serif.font
+    font-weight: Serif.weight.normal
+    transition fade
+    transform translateX(-1rem)
 
   .active
     .dsk-circle
-      background charcoal
+      background active-color
       background-clip padding-box
       //width 2rem
       //height (@width)
@@ -79,8 +111,9 @@
       transform scale(1)
       transition all 1s ease-in-out .5s
 
+    // Timeline dot
     .dsk-circle-date
-      color charcoal
+      color active-color
 
 
   .step
@@ -89,9 +122,10 @@
 
   .dsk-nav
     position absolute
-    height 32px
+    //height 32px
     top 10px
     right 10px
+    width 30px
 
     span
       background url(img/prev.png) no-repeat center center rgba(255,255,255,.3)
@@ -114,7 +148,7 @@
     .dsk-next
       border-radius 0 3px 3px 0
       background-image url(img/next.png)
-      margin-right 20px
+      //margin-right 20px
 
     .dsk-autoplay
       background-image url(img/play.png)
@@ -124,7 +158,7 @@
 
   .dsk-content
     position absolute
-    top -350px
+    top -550px
     height 300px
     width 800px
     left -200px
@@ -132,26 +166,31 @@
     transition all 0.5s ease-in
     transform scale(0.5)
 
-    & > img
-      max-width 256px
-      max-height 300px
-      position absolute
-      right 0px
-      top 0px
+    display table
 
+    // & > img
+    //   width 100%
+    //   height auto
+    //
+    //   // max-width 256px
+    //   // max-height 300px
 
   //
   // Edit slide typography here
   .dsk-info
-    width 450px
-    text-shadow 2px 2px 2px rgba(0,0,0,.2)
+    display table-cell
+    vertical-align middle
+
+    width 50%
+    //text-shadow 2px 2px 2px rgba(0,0,0,.2)
 
     .date__heading
-      color #fff
+      color content-color
       margin 0 0 20px 0
       font-weight normal
 
     p
+      color content-color
       font-size 1.5rem
       margin 0
 
@@ -159,12 +198,21 @@
     font-size 24px
     padding 10px
 
-.dsk-circle-date
-  color white
-  font-family: Serif.font
-  font-weight: Serif.weight.normal
-  transition all 0.5s ease-in
-  transform translateX(-1rem)
+
+
+  img
+    width 100%
+    height auto
+
+
+  .media
+    display table-cell
+    vertical-align middle
+    height 500px
+    width 50%
+    // position absolute
+    // right 0px
+    // top 0px
 
 
 // End slide typography here
@@ -178,3 +226,16 @@
 @media screen, (max-width: 650px)
   .dsk-supported
     height 400px
+
+
+
+.footer-timeline
+  padding-top 2rem
+  position absolute
+  bottom 1.5rem
+  left 50%
+
+  p
+    font-size 11px
+    color white
+    text-align right

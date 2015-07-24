@@ -11,11 +11,13 @@ html
 
     link(rel='stylesheet', type='text/css', href='style.css')
 
-    script(src='js/vendor/modernizr.js')
+    //-script(src='js/vendor/modernizr.js')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
       
-    script(src='js/vendor/jmpress.min.js')
-    script(src='js/vendor/dasky.min.js')
+    //- script(src='js/vendor/jmpress.min.js')
+    //- script(src='js/vendor/dasky.js')
+      
+    script(src='js/global.js')
       
     script(type="text/javascript").
       $(function(){
@@ -36,10 +38,16 @@ html
 
 
   body.timeline
+    
+    #drawer
+      a(href="#/step-1") 1
+      a(href="#/step-2") 2
+      a(href="#/step-3") 3
+      a(href="#/step-4") 4
 
     header.header
       .header__logo--col-4-12
-        a(href="https://www.commercebank.com")
+        a(href="index.html")
           img(src='img/CommerceFDIC.png', alt='Commerce Bank logo')
       .header__social-nav--col-8-12
         a(href='http://www.facebook.com/commercebank', target='_blank')
@@ -48,11 +56,14 @@ html
           icon(name="ei-sc-linkedin", size="m")
         a(href='http://www.linkedin.com/company/commerce_bank', target='_blank')
           icon(name="ei-sc-twitter", size="m")
+        a#toggle(href='#')
+          icon(name="ei-navicon", size="m")
+            
         
     block content
           
-    footer.footer
-      .footer.main__content--col-8-12
+    footer.footer-timeline
+      .footer
         p
           | Copyright &#169; 2015 Commerce Bancshares, Inc. Member FDIC. All Rights Reserved. 
           a(href="https://www.commercebank.com/about/security-center/privacy.asp", target="_blank") Privacy 
