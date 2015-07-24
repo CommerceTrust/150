@@ -202,7 +202,7 @@ gulp.task('ghp', function() {
 
 
 
-gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
+gulp.task('default', ['imgs', 'stylus', 'yaml', 'jade', 'js' ,'browser-sync'], function () {
   gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
   gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
   gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
