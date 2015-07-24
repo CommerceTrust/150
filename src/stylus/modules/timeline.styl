@@ -1,4 +1,24 @@
-@charset "utf-8";
+// UI
+//
+// timeline
+timeline-bg = white
+active-color = charcoal
+not-active-color = white
+
+fade = all 1s ease-in
+
+// Slide settings
+//
+// Heading
+//
+// text
+//
+// Image
+
+
+
+
+
 .dsk-not-supported,.dsk-supported
   background dirt
   background-size 100% 100%
@@ -42,6 +62,7 @@
   height 550px
   overflow hidden
 
+  // Timeline bar
   .dsk-linewrapper
     height 6rem
     bottom 20%
@@ -50,26 +71,34 @@
     box-shadow 0 1px rgba(255, 255, 255, 0.15) inset
     position absolute
     bottom 20%
-    color #fff
+    color timeline-bg
 
   .dsk-wrapper
     outline none
     overflow visible !important
 
+  // Timeline Dot not active
   .dsk-circle
-    background white
+    background not-active-color
     border-radius 50%
     box-shadow 0 0 2px rgba(0,0,0,.1)
     cursor pointer
     width 1rem
     height (@width)
     position relative
-    transition all 0.5s ease-in
+    transition fade
     user-select none
+
+  .dsk-circle-date
+    color not-active-color
+    font-family: Serif.font
+    font-weight: Serif.weight.normal
+    transition fade
+    transform translateX(-1rem)
 
   .active
     .dsk-circle
-      background charcoal
+      background active-color
       background-clip padding-box
       //width 2rem
       //height (@width)
@@ -79,8 +108,9 @@
       transform scale(1)
       transition all 1s ease-in-out .5s
 
+    // Timeline dot
     .dsk-circle-date
-      color charcoal
+      color active-color
 
 
   .step
@@ -159,12 +189,6 @@
     font-size 24px
     padding 10px
 
-.dsk-circle-date
-  color white
-  font-family: Serif.font
-  font-weight: Serif.weight.normal
-  transition all 0.5s ease-in
-  transform translateX(-1rem)
 
 
 // End slide typography here
