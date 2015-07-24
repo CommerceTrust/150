@@ -10,7 +10,7 @@ fade = all 1s ease-in
 // Slide settings
 //
 // Heading
-//
+content-color = charcoal
 // text
 //
 // Image
@@ -154,7 +154,7 @@ fade = all 1s ease-in
 
   .dsk-content
     position absolute
-    top -350px
+    top -550px
     height 300px
     width 800px
     left -200px
@@ -162,26 +162,31 @@ fade = all 1s ease-in
     transition all 0.5s ease-in
     transform scale(0.5)
 
-    & > img
-      max-width 256px
-      max-height 300px
-      position absolute
-      right 0px
-      top 0px
+    display table
 
+    // & > img
+    //   width 100%
+    //   height auto
+    //
+    //   // max-width 256px
+    //   // max-height 300px
 
   //
   // Edit slide typography here
   .dsk-info
-    width 450px
-    text-shadow 2px 2px 2px rgba(0,0,0,.2)
+    display table-cell
+    vertical-align middle
+
+    width 50%
+    //text-shadow 2px 2px 2px rgba(0,0,0,.2)
 
     .date__heading
-      color #fff
+      color content-color
       margin 0 0 20px 0
       font-weight normal
 
     p
+      color content-color
       font-size 1.5rem
       margin 0
 
@@ -189,6 +194,21 @@ fade = all 1s ease-in
     font-size 24px
     padding 10px
 
+
+
+  img
+    width 100%
+    height auto
+
+
+  .media
+    display table-cell
+    vertical-align middle
+    height 500px
+    width 50%
+    // position absolute
+    // right 0px
+    // top 0px
 
 
 // End slide typography here
