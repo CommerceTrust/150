@@ -33,10 +33,33 @@ slides:
     img: 1900.png
     layout: right
 
+# Repeat
 
-  # - year: 1887
-  #   title: hello
-  #   subtitle: what up
-  #   content: Bank of Commerce is granted national charter; becomes National Bank of Commerce.
-  #   img: 1900.png
-  #   layout: right
+  - year: 1865
+    title: hello
+    subtitle: what up
+    content: Kansas City Savings Association is organized with $10,000 in capital. Francis Long is president.
+    img: 1865.png
+    layout: left
+
+  - year: 1873
+    title: CREAM
+    subtitle: what up
+    content: Kansas City Savings Association takes offices above the Magnolia Saloon at 4th and Delaware.
+    img: 1873.png
+    layout: right
+
+  - year: 1881
+    title: Blah
+    subtitle: what up
+    content: Dr. William S. Woods buys control of the bank; becomes president; name change to Bank of Commerce.
+    img: 1881.png
+    layout: right
+
+
+  - year: 1885
+    title: hello
+    subtitle: what up
+    content: Bank of Commerce moves its location to 6th and Deleware.
+    img: 1900.png
+    layout: right
