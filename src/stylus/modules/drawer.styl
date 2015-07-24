@@ -1,5 +1,5 @@
 #drawer
-  background-color #CCC
+  background-color green
   position absolute
   right 0
   top 0
@@ -9,10 +9,24 @@
   z-index 2
 
   transform translateX(200px)
-  transition transform 1s ease-in-out
+  transition transform .5s ease-in-out
 
-.slide
-  transform translateX(0)
+  &.slide
+    transform translateX(0)
 
-.move
-  transform translateX(-200px)
+  a
+    color white
+    display block
+    text-align center
+
+    &:hover
+      background-color white
+      color green
+
+
+#toggle
+  margin-right 0
+  transition margin-right .5s ease-in-out
+
+#toggle.move
+  margin-right 200px

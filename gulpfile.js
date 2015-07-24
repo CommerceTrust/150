@@ -42,6 +42,8 @@ var changed         = require('gulp-changed');      // Used to check if a file h
 var imagemin        = require('gulp-imagemin');     // Used to compress images
 var pngquant        = require('imagemin-pngquant'); // Used to compress pngs
 var notify          = require('gulp-notify');       // Used to output messages during gulp tasks
+var uglify          = require('gulp-uglify');
+var concat          = require('gulp-concat');
 
 var ghPages         = require('gulp-gh-pages');     // Used to move Dist to gh-pages
 
@@ -52,21 +54,6 @@ var ghPages         = require('gulp-gh-pages');     // Used to move Dist to gh-p
 //
 
 
-var uglify          = require('gulp-uglify');
-var concat          = require('gulp-concat');
-
-
-gulp.task('js', function () {
-    gulp.src(srcPath.js)
-    .pipe(concat('global.js'))
-    //.pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest(sendto.dist + '/js'));
-});
-
-//var uglify = require('gulp-uglify');
-// TODO - add JS minification, linting, and concatenation
-//var uglify
 
 // Pleeease Post-Prosessor options
 var pleaseOptions  = {
@@ -172,6 +159,13 @@ gulp.task('imgs', function () {
     .pipe(gulp.dest(sendto.dist + '/img'));
 });
 
+gulp.task('js', function () {
+    gulp.src(srcPath.js)
+    .pipe(concat('global.js'))
+    //.pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest(sendto.dist + '/js'));
+});
 
 
 // Copy js

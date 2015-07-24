@@ -5,8 +5,8 @@ jQuery(function($){
       $nav = $(".header__logo--col-4-12");
 
   $btn.on( "click", function() {
-    console.log( 'hello' );
-    //$nav.toggleClass( 'move' );
-    //$drawer.toggleClass( 'slide' );
+    //console.log( 'hello' );
+    $(this).toggleClass( 'move' );
+    $drawer.toggleClass( 'slide' );
   });
 });
