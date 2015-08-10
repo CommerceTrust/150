@@ -57,11 +57,29 @@
     padding 0 1rem
     vertical-align top
 
+    +below(890px)
+      width 40%
+
+    +below(690px)
+      display block
+      width 100%
+
+  &__sidebar-media
+    text-align center
+    p
+      +below(690px)
+        display inline-block
+        width 33%
+
   &__content--col-6-12
     padding 0 1rem
 
-    +below(875px)
-      width 80%
+    +below(890px)
+      width 60%
+
+    +below(690px)
+      display block
+      width 100%
 
   &__heading
     color green
@@ -89,12 +107,3 @@
       background-color green
       color slate
       text-decoration: none
-
-
-.footer
-  padding-top 2rem
-
-  p
-    font-size 11px
-    color tin
-    text-align center
