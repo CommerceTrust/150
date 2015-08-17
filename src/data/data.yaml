@@ -4,7 +4,7 @@ slides:
     subtitle:
     content: |
       Kansas City Savings Association is organized with $10,000 in capital. Francis Long is president.
-    img:
+    img: 001.png
     layout: left
 
   - year: 1873
@@ -12,7 +12,7 @@ slides:
     subtitle:
     content: |
       Kansas City Savings Association takes offices above the Magnolia Saloon at 4th and Delaware.
-    img:
+    img: 002.png
     layout: left
 
   - year: 1881
@@ -20,7 +20,7 @@ slides:
     subtitle:
     content: |
       Dr. William S. Woods buys control of the bank; becomes president; name change to Bank of Commerce.
-    img:
+    img: 003.png
     layout: left
 
   - year: 1885
@@ -29,14 +29,14 @@ slides:
     content: |
       Bank of Commerce moves its location to 6th and Deleware.
     img:
-    layout: left
+    layout:
 
   - year: 1887
     title:
     subtitle:
     content: |
       Bank of Commerce is granted national charter; becomes National Bank of Commerce.
-    img:
+    img: 004.png
     layout: left
 
   - year: 1893
@@ -44,7 +44,7 @@ slides:
     subtitle:
     content: |
       National bank panic. Bank of Commerce remains open and strong while more than 500 banks in U.S. fail or suspend operations.
-    img:
+    img: 004.png
     layout: left
 
   - year: 1900
@@ -52,7 +52,7 @@ slides:
     subtitle:
     content: |
       National Bank of Commerce is the 12th largest bank in the U.S., with more than $36 million in deposits. Arthur Stilwell organizes the Kansas City, Mexico & Orient Railroad, financed in part by Dr. Woods.
-    img:
+    img: 005.png
     layout: left
 
   - year: 1903
@@ -60,7 +60,7 @@ slides:
     subtitle:
     content: |
       Future President Harry Truman starts work as clerk at Commerce. Housemate is another Commerce employee, Arthur Eisenhower, brother of future President Dwight D. Eisenhower.
-    img:
+    img: 007.png
     layout: left
 
   - year: 1906
@@ -68,7 +68,7 @@ slides:
     subtitle:
     content: |
       Commerce Trust Company is organized. Woods appoints William Thornton "W.T" Kemper vice president; work starts on 15-story building at the corner of 10th and Walnut in Kansas City, one of the tallest buildings west of the Mississippi.
-    img:
+    img: 009.png
     layout: left
 
   - year: 1907
@@ -77,14 +77,14 @@ slides:
     content: |
       Monetary panic sparked by the failure of the Knickerbocker Trust Company of New York. National Bank of Commerce is placed into receivership by William Ridgely, Comptroller of the Currency, who resigns his post and is appointed receiver of Commerce along with his brother.
     img:
-    layout: left
+    layout:
 
   - year: 1908
     title:
     subtitle:
     content: |
       Dr. Woods regains control of the bank, recapitalizes and expunges the Ridgelys.
-    img:
+    img: 006.png
     layout: left
 
   - year: 1912
@@ -92,7 +92,7 @@ slides:
     subtitle:
     content: |
       National Bank of Commerce merges with Southwest National Bank: takes name of Southwest National Bank until 1919.
-    img:
+    img: 008.png
     layout: left
 
   - year: 1914
@@ -101,7 +101,7 @@ slides:
     content: |
       Federal Reserve System is formed: with the urging of KC leaders, Missouri becomes only state with two Federal Reserve banks.
     img:
-    layout: left
+    layout:
 
   - year: 1915
     title:
@@ -109,7 +109,7 @@ slides:
     content: |
       Commerce hosts first meeting of Federal Reserve Bank of Kansas City.
     img:
-    layout: left
+    layout:
 
   - year: 1916
     title:
@@ -117,7 +117,7 @@ slides:
     content: |
       Commerce Trust combines with Southwest National Bank; operates separately until 1921.
     img:
-    layout: left
+    layout:
 
   - year: 1919
     title:
@@ -125,14 +125,14 @@ slides:
     content: |
       “Southwest” is dropped from the company name.
     img:
-    layout: left
+    layout:
 
   - year: 1921
     title:
     subtitle:
     content: |
       W.T. Kemper becomes chairman of newly consolidated Commerce Trust; Women’s Department is established and overseen by Mrs. Ralph Beebe.
-    img:
+    img: 011.png
     layout: left
 
   - year: 1922
@@ -140,7 +140,7 @@ slides:
     subtitle:
     content: |
       W.T. Kemper sells his interest in Commerce to Theodore Gary for more than $200 per share. James Kemper, Sr. begins working at Commerce.
-    img:
+    img: 010.png
     layout: left
 
   - year: 1925
@@ -148,7 +148,7 @@ slides:
     subtitle:
     content: |
       James Kemper Sr. named president of Commerce Trust Company. W.T. Kemper buys Kansas City, Mexico & Orient Railroad.
-    img:
+    img: 012.png
     layout: left
 
   - year: 1928
@@ -156,7 +156,7 @@ slides:
     subtitle:
     content: |
       Commerce Trust opens first 24-hour check clearing operation in the country. W.T. Kemper sells Kansas City, Mexico & Orient Railroad to the Santa Fe Railroad.
-    img:
+    img: 012.png
     layout: left
 
   - year: 1932
@@ -165,14 +165,14 @@ slides:
     content: |
       W.T. Kemper reacquires Commerce Bank for $86 per share.
     img:
-    layout: left
+    layout:
 
   - year: 1933
     title:
     subtitle:
     content: |
       Commerce Bank survives run during Great Depression. W.T. Kemper hands out apples to cheer up people waiting in line to withdraw their deposits. Banking Act of 1933 creates the FDIC system.
-    img:
+    img: 013.png
     layout: left
 
   - year: 1938
@@ -180,7 +180,7 @@ slides:
     subtitle:
     content: |
       W.T. Kemper dies; James Kemper, Sr. becomes chairman of the board.
-    img:
+    img: 013.png
     layout: left
 
   - year: 1944
@@ -188,7 +188,7 @@ slides:
     subtitle:
     content: |
       James Kemper, Sr. joins with other community leaders to found Midwest Research Institute, helping Kansas City develop new industries.
-    img:
+    img: 014.png
     layout: left
 
   - year: 1946
@@ -196,7 +196,7 @@ slides:
     subtitle:
     content: |
       James Kemper, Jr. begins work at the First National Bank of Independence, controlled by the Kemper family. Later that year he moves to Commerce Trust Company.
-    img:
+    img: 015.png
     layout: left
 
   - year: 1953
@@ -204,7 +204,7 @@ slides:
     subtitle:
     content: |
       Commerce installs landmark clock at corner of 10th and Walnut. With a weight of approxi- mately two tons, many terrified pedestrians refuse to walk under it.
-    img:
+    img: 016.png
     layout: left
 
   - year: 1955
@@ -212,7 +212,7 @@ slides:
     subtitle:
     content: |
       Commerce leads financing for TWA overhaul base. (By 1972, TWA is Kansas City’s largest employer.) James Kemper, Jr. becomes president of the bank. James Kemper, Sr., and Arthur Eisenhower dedicate first “electric stairs” in Kansas City, installed in Commerce Trust Building.
-    img:
+    img: 017.png
     layout: left
 
   - year: 1958
@@ -220,7 +220,7 @@ slides:
     subtitle:
     content: |
       Capital for Business is formed to make investments in small to midsize manufacturing and distribution companies.
-    img:
+    img: 017.png
     layout: left
 
   - year: 1965
@@ -228,7 +228,7 @@ slides:
     subtitle:
     content: |
       Commerce Tower opens at 911 Main in Kansas City. Top of the Tower Restaurant occupies the 30th floor. Commerce purchases Midwestern license for BankAmericard – predecessor of VISA bank card.
-    img:
+    img: 018.png
     layout: left
 
   - year: 1966
@@ -237,7 +237,7 @@ slides:
     content: |
       Commerce organizes bank holding company, Commerce Bancshares. The next year, it starts acquiring banks in Missouri.
     img:
-    layout: left
+    layout:
 
   - year: 1971
     title:
@@ -245,7 +245,7 @@ slides:
     content: |
       Commerce Trust Company changes name to Commerce Bank, NA. Commerce Bancshares begins publicly trading on NASDAQ. Assets pass $1 billion.
     img:
-    layout: left
+    layout:
 
   - year: 1978
     title:
@@ -253,14 +253,14 @@ slides:
     content: |
       Commerce acquires first affiliate bank in St. Louis — Manchester Financial. David Kemper joins Commerce in Commercial Lending.
     img:
-    layout: left
+    layout:
 
   - year: 1979
     title:
     subtitle:
     content: |
       Installation of the first Commerce Bank ATM, located in Springfield, Missouri.
-    img:
+    img: 020.png
     layout: left
 
   - year: 1982
@@ -268,7 +268,7 @@ slides:
     subtitle:
     content: |
       David Kemper becomes president and chief operating officer. Jonathan Kemper joins bank.
-    img:
+    img: 021.png
     layout: left
 
   - year: 1983
@@ -276,7 +276,7 @@ slides:
     subtitle:
     content: |
       Commerce acquires County Tower Corp. in St. Louis.
-    img:
+    img: 022.png
     layout: left
 
   - year: 1984
@@ -285,7 +285,7 @@ slides:
     content: |
       Commerce Bank of Omaha is established for credit card business. Later that year, Commerce introduces “Special Connections” — first card having both credit and ATM functions.
     img:
-    layout: left
+    layout:
 
   - year: 1985
     title:
@@ -293,7 +293,7 @@ slides:
     content: |
       Commerce acquires First National Bank of St. Joseph from the FDIC.
     img:
-    layout: left
+    layout:
 
   - year: 1986
     title:
@@ -301,14 +301,14 @@ slides:
     content: |
       Construction completed on the Commerce Bank building at 1000 Walnut Street in Kansas City.
     img:
-    layout: left
+    layout:
 
   - year: 1990
     title:
     subtitle:
     content: |
       Commerce sells its interest in Commerce Tower.
-    img:
+    img: 023.png
     layout: left
 
   - year: 1991
@@ -317,14 +317,14 @@ slides:
     content: |
       President George H. W. Bush gives Commerce “E Star” Award for exports.
     img:
-    layout: left
+    layout:
 
   - year: 1992
     title:
     subtitle:
     content: |
       Commerce acquires First Peoria Corporation which was originally founded in 1863.
-    img:
+    img: 023.png
     layout: left
 
   - year: 1994
@@ -332,7 +332,7 @@ slides:
     subtitle:
     content: |
       President Bill Clinton announces welfare reform in a speech given in the Walnut lobby, at the Commerce Trust Company building in Kansas City.
-    img:
+    img: 024.png
     layout: left
 
   - year: 2001
@@ -340,7 +340,7 @@ slides:
     subtitle:
     content: |
       The Commerce Trust Building added to the National Register of Historic Places: renovation completed.
-    img:
+    img: 026.png
     layout: left
 
   - year: 2003
@@ -348,7 +348,7 @@ slides:
     subtitle:
     content: |
       David Kemper rings bell at NASDAQ. Commerce Bancshares was among the first companies listed on NASDAQ.
-    img:
+    img: 025.png
     layout: left
 
   - year: 2007
@@ -357,7 +357,7 @@ slides:
     content: |
       Commerce acquires banks in Tulsa, Oklahoma and Aurora, Colorado.
     img:
-    layout: left
+    layout:
 
   - year: 2009
     title:
@@ -365,14 +365,14 @@ slides:
     content: |
       Following the 2008 banking crisis, Commerce chooses not to receive TARP Funds from the federal government.
     img:
-    layout: left
+    layout:
 
   - year: 2011
     title:
     subtitle:
     content: |
       David Kemper testifies before House subcom- mittee on effects of Interchange legislation.
-    img:
+    img: 027.png
     layout: left
 
   - year: 2013
@@ -380,7 +380,7 @@ slides:
     subtitle:
     content: |
       John Woods Kemper named president and chief operating officer. Commerce acquires Summit Bank in Tulsa and Oklahoma City.
-    img:
+    img: 028.png
     layout: left
 
   - year: 2014
@@ -388,7 +388,7 @@ slides:
     subtitle:
     content: |
       Next-generation high-tech banking center opens in St. Louis featuring innovative approach to customer service.
-    img:
+    img: 029.png
     layout: left
 
   - year: 2015
@@ -396,5 +396,5 @@ slides:
     subtitle:
     content: |
       Commerce Bank commemorates 150th Anniversary: has $24 billion in assets; operates in eight key markets, with more than 190 branches, plus three additional commercial offices in central U.S.; employs more than 4,800 people.
-    img:
+    img: 030.png
     layout: left
