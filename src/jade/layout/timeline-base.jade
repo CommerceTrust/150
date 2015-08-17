@@ -5,7 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
 
     block seo
-  
+
     link(href="http://fonts.googleapis.com/css?family=Playfair\+Display:400,400italic,700,900", rel="stylesheet", type="text/css")
     link(href="http://fonts.googleapis.com/css?family=News\+Cycle:400,700", rel="stylesheet", type="text/css")
 
@@ -13,12 +13,12 @@ html
 
     //-script(src='js/vendor/modernizr.js')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-      
+
     //- script(src='js/vendor/jmpress.min.js')
     //- script(src='js/vendor/dasky.js')
-      
+
     script(src='js/global.js')
-      
+
     script(type="text/javascript").
       $(function(){
       $('#dasky').Dasky();
@@ -38,13 +38,16 @@ html
 
 
   body.timeline
-    
+
     #drawer
       a(href="#") See the video
-      a(href="#/step-1") 1865
-      a(href="#/step-2") 1873
-      a(href="#/step-3") 1881
-      a(href="#/step-4") 1885
+      a(href="#/step-1") 1865 - 1900
+      a(href="#/step-8") 1901 - 1920
+      a(href="#/step-17") 1921 - 1940
+      a(href="#/step-24") 1941 - 1960
+      a(href="#/step-29") 1961 - 1980
+      a(href="#/step-34") 1981 - 2000
+      a(href="#/step-43") 2001 - Present
       a(href="#") Download the flipbook
 
 
@@ -61,16 +64,16 @@ html
           icon(name="ei-sc-twitter", size="m")
         a#toggle(href='#')
           icon(name="ei-navicon", size="m")
-            
-        
+
+
     block content
-          
+
     footer.footer-timeline
       .footer
         p
-          | Copyright &#169; 2015 Commerce Bancshares, Inc. Member FDIC. All Rights Reserved. 
-          a(href="https://www.commercebank.com/about/security-center/privacy.asp", target="_blank") Privacy 
-          |  | 
+          | Copyright &#169; 2015 Commerce Bancshares, Inc. Member FDIC. All Rights Reserved.
+          a(href="https://www.commercebank.com/about/security-center/privacy.asp", target="_blank") Privacy
+          |  |
           a(href="https://www.commercebank.com/sitemap/", target="_blank") Site Map
-          
+
     include ../inc/scripts
