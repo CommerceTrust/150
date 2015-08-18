@@ -108,13 +108,34 @@ content-color = charcoal
 
     .dsk-content
       opacity 1
-      transform scale(1)
-      transition all 1s ease-in-out .5s
+      //transform scale(1)
+      transition all 0s linear 1s
 
     // Timeline dot
     .dsk-circle-date
       color active-color
 
+  .zoom
+    .dsk-content
+      opacity 0
+      transform scale(0.5)
+      transition all 0.5s ease-in-out 0s
+  .zoom.active
+    .dsk-content
+        opacity 1
+        transform scale(1)
+        transition all 0.5s ease-in-out 0.5s
+
+  .fade
+    .dsk-content
+      opacity 0
+      transform scale(1)
+      transition all 0.5s ease-in-out 0s
+  .fade.active
+    .dsk-content
+        opacity 1
+        transform scale(1)
+        transition all 0.5s ease-in-out 0.5s
 
   .step
     width 400px
@@ -163,8 +184,8 @@ content-color = charcoal
     width 800px
     left -200px
     opacity 0
-    transition all 0.5s ease-in
-    transform scale(0.5)
+    //transition all 0.5s ease-in
+    //transform scale(0.5)
 
     display table
 

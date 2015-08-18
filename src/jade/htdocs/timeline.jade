@@ -16,7 +16,7 @@ block content
 
   #dasky
     each slide in slides
-      .step
+      .step(class = slide.animation)
         .dsk-circle
         h2.dsk-circle-date=slide.year
         .dsk-content
