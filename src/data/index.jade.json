@@ -1,6 +1,15 @@
 {
   "slides": [
     {
+      "year": "Welcome",
+      "title": null,
+      "subtitle": null,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.\n",
+      "img": "030.png",
+      "layout": "left",
+      "animation": "fade"
+    },
+    {
       "year": 1865,
       "title": null,
       "subtitle": null,
