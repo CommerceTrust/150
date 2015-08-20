@@ -19,7 +19,7 @@ block content
       .step(class = slide.animation)
         .dsk-circle
         h2.dsk-circle-date=slide.year
-        .dsk-content
+        .dsk-content(class = slide.img ? undefined : "no-image")
           .dsk-info
             h2.date__heading=slide.year
             p=slide.content
