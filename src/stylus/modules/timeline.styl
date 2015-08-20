@@ -185,8 +185,16 @@ content-color = charcoal
     opacity 0
     //transition all 0.5s ease-in
     //transform scale(0.5)
-
     display table
+    
+    +desktop()
+      top -550px
+      height 300px
+      width 1000px
+      left -300px
+      
+    +mobile()
+      top -1000px
 
     // & > img
     //   width 100%
@@ -202,6 +210,8 @@ content-color = charcoal
     vertical-align middle
 
     width 50%
+    +mobile()
+      display table-row
     //text-shadow 2px 2px 2px rgba(0,0,0,.2)
 
     .date__heading
@@ -230,6 +240,9 @@ content-color = charcoal
     vertical-align middle
     height 500px
     width 50%
+    
+    +mobile()
+      display table-row
     // position absolute
     // right 0px
     // top 0px
@@ -246,8 +259,6 @@ content-color = charcoal
 @media screen, (max-width: 650px)
   .dsk-supported
     height 400px
-
-
 
 .footer-timeline
   padding-top 2rem
