@@ -9,4 +9,11 @@ jQuery(function($){
     $(this).toggleClass( 'move' );
     $drawer.toggleClass( 'slide' );
   });
+
+  var $drawer_links = $("#drawer a")
+
+  $drawer_links.on( "click", function() {
+    $btn.toggleClass( 'move' );
+    $drawer.toggleClass( 'slide' ); 
+  });
 });

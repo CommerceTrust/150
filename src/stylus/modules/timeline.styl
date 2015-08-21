@@ -15,8 +15,12 @@ content-color = charcoal
 //
 // Image
 
+html
+  overflow-x hidden
+
 .timeline
   position relative
+  overflow-x hidden
 
 .dsk-not-supported, .dsk-supported
   background: radial-gradient(ellipse at center, #c9c190 0%, dirt 55%, #89825c 100%);
@@ -279,3 +283,13 @@ content-color = charcoal
     
     +mobile()
       display block
+      
+#back-to-top
+  display none
+  
+  +mobile()
+    display block
+    position fixed
+    bottom 0px
+    right 0px
+    fill darkgreen
