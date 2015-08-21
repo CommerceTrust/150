@@ -257,7 +257,25 @@ content-color = charcoal
   left 50%
   transform translateX(-50%)
 
+  +tablet()
+    bottom 0.5rem
+
   p
     font-size 11px
     color white
     text-align right
+    
+    +mobile()
+      text-align center
+    
+#step-0
+  p
+    display block
+    +mobile()
+      display none
+
+  .mobile-only
+    display none
+    
+    +mobile()
+      display block
