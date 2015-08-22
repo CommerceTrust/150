@@ -10,7 +10,8 @@ jQuery(function($){
     $drawer.toggleClass( 'slide' );
   });
 
-  var $drawer_links = $("#drawer a")
+  // Auto-close the menu if we're jumping to another slide.
+  var $drawer_links = $("#drawer a:not(:first-child):not(:last-child)")
 
   $drawer_links.on( "click", function() {
     console.log("toggling the drawer2");
