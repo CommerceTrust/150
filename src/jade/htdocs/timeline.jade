@@ -16,7 +16,7 @@ block content
 
   #dasky
     each slide, index in slides
-      .step(class = slide.animation)(id = "step-"+index)
+      .step(class = slide.animation, id = "step-"+index)
         .dsk-circle
         h2.dsk-circle-date=slide.year
         .dsk-content(class = slide.img ? undefined : "no-image")
