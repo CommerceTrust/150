@@ -18,32 +18,36 @@ content-color = charcoal
 .timeline
   position relative
 
-.dsk-not-supported, .dsk-supported
+
+
+
+
+.dsk-not-supported,.dsk-supported
   background: radial-gradient(ellipse at center, #c9c190 0%, dirt 55%, #89825c 100%);
   background-size 100% 100%
 
 // Apply these styles as a fallback
 .dsk-not-supported
-  color content-color
-  //text-shadow 1px 1px 0px rgba(0,0,0,.2)
+  color #fff
+  text-shadow 1px 1px 0px rgba(0,0,0,.2)
   padding 1px 0
 
   .step
-    width 100%
+    width 800px
     margin 20px auto
+    background rgba(0,0,0,.2)
     padding 20px
+    border-radius 5px
 
-  .dsk-circle-date
+  .year
     background none
     padding 0
     filter none
     _filter none
-    font-family: Serif.font
-    font-weight: Serif.weight.normal
 
   .dsk-info
     padding-bottom 20px
-    
+
     h2
       display none
 
