@@ -15,40 +15,39 @@ content-color = charcoal
 //
 // Image
 
+html
+  overflow-x hidden
+
 .timeline
   position relative
+  overflow-x hidden
 
-
-
-
-
-.dsk-not-supported,.dsk-supported
-  background dirt
-  background radial-gradient(ellipse at center, #c9c190 0%, dirt 55%, #89825c 100%)
+.dsk-not-supported, .dsk-supported
+  background: radial-gradient(ellipse at center, #c9c190 0%, dirt 55%, #89825c 100%);
   background-size 100% 100%
 
 // Apply these styles as a fallback
 .dsk-not-supported
-  color #fff
-  text-shadow 1px 1px 0px rgba(0,0,0,.2)
+  color content-color
+  //text-shadow 1px 1px 0px rgba(0,0,0,.2)
   padding 1px 0
 
   .step
-    width 800px
+    width 100%
     margin 20px auto
-    background rgba(0,0,0,.2)
     padding 20px
-    border-radius 5px
 
-  .year
+  .dsk-circle-date
     background none
     padding 0
     filter none
     _filter none
+    font-family: Serif.font
+    font-weight: Serif.weight.normal
 
   .dsk-info
     padding-bottom 20px
-
+    
     h2
       display none
 
@@ -205,6 +204,8 @@ content-color = charcoal
     vertical-align middle
 
     width 50%
+    +mobile()
+      display table-row
     //text-shadow 2px 2px 2px rgba(0,0,0,.2)
 
     .date__heading
@@ -233,6 +234,9 @@ content-color = charcoal
     vertical-align middle
     height 500px
     width 50%
+    
+    +mobile()
+      display table-row
     // position absolute
     // right 0px
     // top 0px
@@ -250,8 +254,6 @@ content-color = charcoal
   .dsk-supported
     height 400px
 
-
-
 .footer-timeline
   padding-top 2rem
   position absolute
@@ -259,7 +261,35 @@ content-color = charcoal
   left 50%
   transform translateX(-50%)
 
+  +tablet()
+    bottom 0.5rem
+
   p
     font-size 11px
     color white
     text-align right
+    
+    +mobile()
+      text-align center
+    
+#step-0
+  p
+    display block
+    +mobile()
+      display none
+
+  .mobile-only
+    display none
+    
+    +mobile()
+      display block
+      
+#back-to-top
+  display none
+  
+  +mobile()
+    display block
+    position fixed
+    bottom 0px
+    right 0px
+    fill darkgreen
