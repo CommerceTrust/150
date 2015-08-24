@@ -71,9 +71,9 @@
 			if(base.options.nav)
 			{
 				base.$nav = $('<div class="dsk-nav"></div>');
+        base.$pause = $('<span class="dsk-autoplay"></span>').appendTo(base.$nav);
 				base.$pre = $('<span class="dsk-pre"></span>').appendTo(base.$nav);
 				base.$next = $('<span class="dsk-next"></span>').appendTo(base.$nav);
-				base.$pause = $('<span class="dsk-autoplay"></span>').appendTo(base.$nav);
 
 				base.$el.append(base.$nav);
 			}

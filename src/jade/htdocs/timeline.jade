@@ -15,14 +15,16 @@ block seo
 block content
 
   #dasky
-    each slide in slides
-      .step(class = slide.animation)
+    each slide, index in slides
+      .step(class = slide.animation, id = "step-"+index)
         .dsk-circle
         h2.dsk-circle-date=slide.year
         .dsk-content(class = slide.img ? undefined : "no-image")
           .dsk-info
             h2.date__heading=slide.year
             p=slide.content
+            if slide.mobile_content
+              p.mobile-only=slide.mobile_content
           if slide.img
             .media
               img(src="img/#{slide.img}", alt="")
