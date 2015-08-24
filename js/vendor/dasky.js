@@ -16,7 +16,7 @@
 			{
 				supported= false;
 			}
-			$testsupport.jmpress('deinit');
+			//$testsupport.jmpress('deinit');
 			$testsupport.remove();
 			function isIE () {
 				  var myNav = navigator.userAgent.toLowerCase();
