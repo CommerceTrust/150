@@ -161,9 +161,9 @@ gulp.task('imgs', function () {
 
 gulp.task('js', function () {
     gulp.src(srcPath.js)
-    .pipe(concat('global.js'))
+    //.pipe(concat('global.js'))
     //.pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest(sendto.dist + '/js'));
 });
 
