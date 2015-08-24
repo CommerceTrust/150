@@ -8,15 +8,15 @@
 		//init
         base._init = function(options){
 			var body = document.body;
-
 			var $testsupport = $('<div class="notsupported" style="display:none;"></div>').appendTo($('body'));
-			$testsupport.jmpress({notSupportedClass:'notsupported'});
-			var supported = true;
+      $testsupport.jmpress({notSupportedClass:'notsupported'});
+      var supported = true;
 			if($testsupport.hasClass('notsupported'))
 			{
 				supported= false;
 			}
-			$testsupport.jmpress('deinit');
+      console.log('5');
+			//$testsupport.jmpress('deinit');
 			$testsupport.remove();
 			function isIE () {
 				  var myNav = navigator.userAgent.toLowerCase();
@@ -28,14 +28,14 @@
 				ltIE9 =true;
 			}
 
-
 			if(supported && !ltIE9)
 			{
+        console.log('DSK SUPPORTED');
 				base.$el.addClass('dsk-supported');
 				//check for jmpress
 				if(!$.jmpress)
 				{
-					alert('The page do not include jmpress js file,Dasky will not work!');
+					alert('The page do not include jmpress js file, Dasky will not work!');
 					return;
 				}
 
@@ -57,6 +57,7 @@
 					base._startSlider();
 				}
 			}else{
+        console.log('DSK NOT SUPPORTED');
 				base.$el.addClass('dsk-not-supported');
 			}
 
@@ -71,9 +72,9 @@
 			if(base.options.nav)
 			{
 				base.$nav = $('<div class="dsk-nav"></div>');
+        base.$pause = $('<span class="dsk-autoplay"></span>').appendTo(base.$nav);
 				base.$pre = $('<span class="dsk-pre"></span>').appendTo(base.$nav);
 				base.$next = $('<span class="dsk-next"></span>').appendTo(base.$nav);
-				base.$pause = $('<span class="dsk-autoplay"></span>').appendTo(base.$nav);
 
 				base.$el.append(base.$nav);
 			}
