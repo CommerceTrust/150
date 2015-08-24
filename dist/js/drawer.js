@@ -9,4 +9,12 @@ jQuery(function($){
     $(this).toggleClass( 'move' );
     $drawer.toggleClass( 'slide' );
   });
+
+  var $drawer_links = $("#drawer a:not(:first-child):not(:last-child)")
+
+  $drawer_links.on( "click", function() {
+    $btn.toggleClass( 'move' );
+    $drawer.toggleClass( 'slide' ); 
+  });
+
 });
