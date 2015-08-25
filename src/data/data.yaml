@@ -9,6 +9,7 @@ slides:
     img: 030.png
     layout: left
     animation: fade
+    read_more: www.google.com
 
   - year: 1865
     title:
