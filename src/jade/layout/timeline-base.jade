@@ -25,8 +25,9 @@ html
     //- script(src='js/global.js')
 
     script(type="text/javascript").
-      $(function(){
-      $('#dasky').Dasky({mousewheel: false});
+      $( document ).ready( function(){
+        console.log($('#dasky'));
+        $('#dasky').Dasky({mousewheel: false});
       });
 
     link(rel="shortcut icon", sizes="16x16 24x24 32x32 48x48 64x64", href="favicon.ico")
@@ -45,7 +46,7 @@ html
   body.timeline
 
     #drawer
-      a(class="video" href="https://d3n330amx7jftl.cloudfront.net/commerce150.mp4") See the video
+      a(class="video" href="https://d3n330amx7jftl.cloudfront.net/commerce150.mp4") Watch video
       a(href="#step-0") Welcome
       a(href="#step-1") 1865 - 1900
       a(href="#step-8") 1901 - 1920

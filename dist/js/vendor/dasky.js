@@ -9,15 +9,15 @@
         base._init = function(options){
 			var body = document.body;
 
-			var $testsupport = $('<div class="notsupported" style="display:none;"></div>').appendTo($('body'));
+			/*var $testsupport = $('<div class="notsupported" style="display:none;"></div>').appendTo($('body'));
 			$testsupport.jmpress({notSupportedClass:'notsupported'});
 			var supported = true;
 			if($testsupport.hasClass('notsupported'))
 			{
 				supported= false;
 			}
-			//$testsupport.jmpress('deinit');
-			$testsupport.remove();
+			$testsupport.jmpress('deinit');
+			$testsupport.remove();*/
 			function isIE () {
 				  var myNav = navigator.userAgent.toLowerCase();
 				  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
@@ -29,8 +29,9 @@
 			}
 
 
-			if(supported && !ltIE9)
-			{
+			//if(supported && !ltIE9)
+			if(!ltIE9)
+      {
 				base.$el.addClass('dsk-supported');
 				//check for jmpress
 				if(!$.jmpress)
@@ -51,11 +52,22 @@
 				//init jmpress
 				base._initJmpress();
 
-				base._loadEvents();
+        if(base.support) {
+          base._loadEvents();
 
-				if(base.options.autoplay){
-					base._startSlider();
-				}
+				  if(base.options.autoplay){
+					 base._startSlider();
+				  }
+        }
+        else {
+          base.$el.removeClass('dsk-supported');
+          base.$el.addClass('dsk-not-supported');
+          // Undo base._layout, This is so hacky.
+          $('.step').unwrap().unwrap();
+          base.$nav.remove();
+          $('html,body').removeAttr('style');
+          base.$el.removeAttr('style');
+        }
 			}else{
 				base.$el.addClass('dsk-not-supported');
 			}
@@ -106,9 +118,13 @@
 					maxScale: 1
 				},
 				fullscreen: base.options.fullscreen,
-				keyboard:{use:base.options.keyboard}
+				keyboard: { use: base.options.keyboard },
+        mouse: { clickSelects: false },
+        notSupportedClass:'notsupported'
 			});
-		};
+
+      base.support = !base.$slideWrapper.hasClass('notsupported');		
+    };
 
 		//start auto play timer
 		base._startSliderTimer = function(){

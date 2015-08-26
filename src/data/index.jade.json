@@ -8,7 +8,8 @@
       "mobile_content": "Mobilem contentum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.\n",
       "img": "030.png",
       "layout": "left",
-      "animation": "fade"
+      "animation": "fade",
+      "read_more": "http://www.google.com"
     },
     {
       "year": 1865,
