@@ -25,8 +25,9 @@ html
     //- script(src='js/global.js')
 
     script(type="text/javascript").
-      $(function(){
-      $('#dasky').Dasky({mousewheel: false});
+      $( document ).ready( function(){
+        console.log($('#dasky'));
+        $('#dasky').Dasky({mousewheel: false});
       });
 
     link(rel="shortcut icon", sizes="16x16 24x24 32x32 48x48 64x64", href="favicon.ico")

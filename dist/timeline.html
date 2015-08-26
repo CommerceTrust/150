@@ -16,8 +16,9 @@
     <script src="js/drawer.js"></script>
     <script src="js/lightbox.js"></script>
     <script type="text/javascript">
-      $(function(){
-      $('#dasky').Dasky({mousewheel: false});
+      $( document ).ready( function(){
+        console.log($('#dasky'));
+        $('#dasky').Dasky({mousewheel: false});
       });
       
     </script>
@@ -54,7 +55,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.
 </p>
             <p class="mobile-only">Mobilem contentum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.
-</p><a href="www.google.com">Read More
+</p><a href="http://www.google.com" class="read-more-link">Read More
               <div class="icon icon--ei-external-link"><svg class="icon__cnt"><use xlink:href="#ei-external-link-icon" /></svg></div></a>
           </div>
           <div class="media"><img src="img/030.png" alt=""></div>
