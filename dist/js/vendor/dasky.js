@@ -119,7 +119,7 @@
 				},
 				fullscreen: base.options.fullscreen,
 				keyboard: { use: base.options.keyboard },
-        mouse: { clickSelects: false },
+        mouse: { clickSelects: true },
         notSupportedClass:'notsupported'
 			});
 
