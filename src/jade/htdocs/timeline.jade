@@ -26,8 +26,8 @@ block content
             if slide.mobile_content
               p.mobile-only=slide.mobile_content
             if slide.read_more
-              a(href="#{slide.read_more}" class="read-more-link")
-                | Read More
+              a(href="#{slide.read_more}" target="blank" class="read-more-link")
+                | Visit Commerce Bank
                 icon(name="ei-external-link")
           if slide.img
             .media
