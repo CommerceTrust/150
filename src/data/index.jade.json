@@ -4,8 +4,8 @@
       "year": "Welcome",
       "title": null,
       "subtitle": null,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.\n",
-      "mobile_content": "Mobilem contentum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.\n",
+      "content": "Our timeline is set to play automatically. If you would like more time to view a milestone, use the “pause” icon on the right side of your screen. Press the “play” icon to continue or use the arrow icons to advance through the presentation at your own pace.\n",
+      "mobile_content": "View these milestones by scrolling vertically or clicking the menu icon to choose a specific time period. Use the “up” arrow in the bottom corner to return to the top.\n",
       "img": "2015.png",
       "animation": "fade",
       "read_more": "http://www.google.com"
@@ -199,7 +199,7 @@
       "year": 1953,
       "title": null,
       "subtitle": null,
-      "content": "Commerce installs landmark clock at corner of 10th and Walnut. With a weight of approxi- mately two tons, many terrified pedestrians refuse to walk under it.\n",
+      "content": "Commerce installs landmark clock at corner of 10th and Walnut. With a weight of approximately two tons, many terrified pedestrians refuse to walk under it.\n",
       "img": "1953.png"
     },
     {
@@ -346,7 +346,7 @@
       "year": 2011,
       "title": null,
       "subtitle": null,
-      "content": "David Kemper testifies before House subcom- mittee on effects of Interchange legislation.\n",
+      "content": "David Kemper testifies before House subcommittee on effects of Interchange legislation.\n",
       "img": "2011.png"
     },
     {
