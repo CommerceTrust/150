@@ -3,9 +3,9 @@ slides:
     title:
     subtitle:
     content: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.
+      Our timeline is set to play automatically. If you would like more time to view a milestone, use the “pause” icon on the right side of your screen. Press the “play” icon to continue or use the arrow icons to advance through the presentation at your own pace.
     mobile_content: |
-      Mobilem contentum dolor sit amet, consectetur adipiscing elit. Etiam ultrices vitae ex at semper. In purus est, imperdiet et ultrices quis, efficitur fermentum mi.
+      View these milestones by scrolling vertically or clicking the menu icon to choose a specific time period. Use the “up” arrow in the bottom corner to return to the top.
     img: 2015.png
     animation: fade
     read_more: http://www.google.com
@@ -199,7 +199,7 @@ slides:
     title:
     subtitle:
     content: |
-      Commerce installs landmark clock at corner of 10th and Walnut. With a weight of approxi- mately two tons, many terrified pedestrians refuse to walk under it.
+      Commerce installs landmark clock at corner of 10th and Walnut. With a weight of approximately two tons, many terrified pedestrians refuse to walk under it.
     img: 1953.png
 
   - year: 1955
@@ -346,7 +346,7 @@ slides:
     title:
     subtitle:
     content: |
-      David Kemper testifies before House subcom- mittee on effects of Interchange legislation.
+      David Kemper testifies before House subcommittee on effects of Interchange legislation.
     img: 2011.png
 
   - year: 2013
