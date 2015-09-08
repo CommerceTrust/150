@@ -6,6 +6,18 @@ jQuery(function($){
   $btn.on( "click", function() {
     $(this).toggleClass( 'move' );
     $drawer.toggleClass( 'slide' );
+
+    $icon = $("#toggle i");
+
+    if( $(this).hasClass('move') ) {
+      $icon
+        .removeClass('fa-bars')
+        .addClass('fa-close');
+    } else {
+      $icon
+        .removeClass('fa-close')
+        .addClass('fa-bars');
+    }
   });
 
 
