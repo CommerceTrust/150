@@ -25,9 +25,9 @@ block content
             p=slide.content
             if slide.mobile_content
               p.mobile-only=slide.mobile_content
-            if slide.read_more
-              a(href="#{slide.read_more}" class="read-more-link")
-                | Read More
+            if slide.read_more_link
+              a(href="#{slide.read_more_link}" target="blank" class="read-more-link")
+                | #{slide.read_more_text}
                 icon(name="ei-external-link")
           if slide.img
             .media
