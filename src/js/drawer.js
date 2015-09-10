@@ -6,7 +6,7 @@ jQuery(function($){
   $btn.on( "click", toggle_menu);
 
   // Make sure to close menu when jumping to another part of the timeline
-  var $drawer_links = $("#drawer a:not(:first-child):not(:last-child)")
+  var $drawer_links = $("#drawer a:not(:first-child)")
 
   $drawer_links.on( "click", toggle_menu);
 
