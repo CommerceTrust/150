@@ -8,7 +8,28 @@
 		//init
         base._init = function(options){
 			var body = document.body;
-
+      // don't use the timeline if we're on mobile
+      var isMobile = {
+          Android: function() {
+              return navigator.userAgent.match(/Android/i);
+          },
+          BlackBerry: function() {
+              return navigator.userAgent.match(/BlackBerry/i);
+          },
+          iOS: function() {
+              return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+          },
+          Opera: function() {
+              return navigator.userAgent.match(/Opera Mini/i);
+          },
+          Windows: function() {
+              return navigator.userAgent.match(/IEMobile/i);
+          },
+          any: function() {
+              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+          }
+      };
+      var is_mobile = isMobile.any();
 			/*var $testsupport = $('<div class="notsupported" style="display:none;"></div>').appendTo($('body'));
 			$testsupport.jmpress({notSupportedClass:'notsupported'});
 			var supported = true;
@@ -30,7 +51,7 @@
 
 
 			//if(supported && !ltIE9)
-			if(!ltIE9)
+			if(!ltIE9 && !is_mobile)
       {
 				base.$el.addClass('dsk-supported');
 				//check for jmpress
