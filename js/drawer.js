@@ -20,8 +20,6 @@ jQuery(function($){
     }
   });
 
-
-
   // Make sure to close menu when jumping to another part of the timeline
   var $drawer_links = $("#drawer a:not(:first-child):not(:last-child)")
 
