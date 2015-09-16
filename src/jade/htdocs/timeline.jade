@@ -4,13 +4,11 @@ title: 150 Years of Building Commerce
 description: As we mark the 150th anniversary of the bank, we have selected some of the important milestones we have passed along the way to reflect on both the work and the sustained values that have built the Commerce Bank of today.
 ---
 
-
 extends ../layout/timeline-base
 
 block seo
   title= title
   meta(name="description" content="#{description}")
-
 
 block content
 
@@ -24,11 +22,11 @@ block content
             h2.date__heading=slide.year
             p=slide.content
             if slide.mobile_content
-              p.mobile-only=slide.mobile_content
+              p.mobile-content=slide.mobile_content
             if slide.read_more_link
               a(href="#{slide.read_more_link}" target="blank" class="read-more-link")
-                | #{slide.read_more_text}
-                icon(name="ei-external-link")
+                | #{slide.read_more_text} 
+                i.fa.fa-external-link
           if slide.img
             .media
               img(src="img/#{slide.img}", alt="")

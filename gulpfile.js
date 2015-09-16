@@ -1,8 +1,3 @@
-// TODO
-
-// Figure out Gulp-Markdown
-
-
 // Paths
 var sendto = {
   dist: './dist'
@@ -27,7 +22,6 @@ var stylus          = require('gulp-stylus');       // PreProcessor
 // var rupture         = require('rupture');        // Use Rupture for
 var sourcemaps      = require('gulp-sourcemaps');   // SourceMaps for CSS and JS
 var please          = require('gulp-pleeease');     // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
-var evilIcons       = require('gulp-evil-icons');   // SVG Icon Library
 var jade            = require('gulp-jade');         // Jade for HTML
 var marked          = require('marked');            // Enable MarkDown with Jade. :markdown filter
 var plumber         = require('gulp-plumber');      // Prevent pipe from breaking even if and error is encountered
@@ -123,7 +117,6 @@ gulp.task('jade', function() {
     }))
     // TODO - pretty: false for HTML minification
     .pipe(jade({ pretty: true }))
-    .pipe(evilIcons())
     .pipe(gulp.dest(sendto.dist))
     .pipe(browserSync.reload({stream:true}));
 });

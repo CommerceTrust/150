@@ -22,7 +22,7 @@ html
     script(type="text/javascript").
       $( document ).ready( function(){
         $('#dasky').Dasky({mousewheel: false});
-        $('body').removeClass('hidden');
+        $('body').removeClass('hidden--opacity');
       });
 
     link(rel="shortcut icon", sizes="16x16 24x24 32x32 48x48 64x64", href="favicon.ico")
@@ -37,7 +37,7 @@ html
     meta(name="msapplication-TileImage", content="img/favicon-144.png")
     meta(name="msapplication-TileColor", content="#006547")
 
-  body.timeline.hidden
+  body.timeline.hidden--opacity
     
     #drawer
       a(class="video-trigger" href="#") Watch video
