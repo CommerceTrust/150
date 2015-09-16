@@ -12,7 +12,6 @@ html
     link(rel="stylesheet" type='text/css', href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
     link(rel='stylesheet', type='text/css', href='style.css')
 
-    //-script(src='js/vendor/modernizr.js')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script(src='js/vendor/jmpress.min.js')
     script(src='js/vendor/modernizr.js')
@@ -23,6 +22,7 @@ html
     script(type="text/javascript").
       $( document ).ready( function(){
         $('#dasky').Dasky({mousewheel: false});
+        $('body').removeClass('hidden');
       });
 
     link(rel="shortcut icon", sizes="16x16 24x24 32x32 48x48 64x64", href="favicon.ico")
@@ -37,7 +37,7 @@ html
     meta(name="msapplication-TileImage", content="img/favicon-144.png")
     meta(name="msapplication-TileColor", content="#006547")
 
-  body.timeline
+  body.timeline.hidden
     
     #drawer
       a(class="video-trigger" href="#") Watch video
@@ -57,7 +57,7 @@ html
       a(href='https://twitter.com/CommerceBank?rd=1', target='_blank')
           i.fa.fa-twitter
 
-    a#back-to-top(href="#header")
+    a#back-to-top(href="#timeline-header")
       i.fa.fa-arrow-up.fa-2x
 
     header.header(id="timeline-header")
@@ -75,7 +75,6 @@ html
           i.fa.fa-bars.fa-2x
 
     block content
-  
   
     footer.footer-timeline
       .footer
