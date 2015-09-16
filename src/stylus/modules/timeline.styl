@@ -18,6 +18,21 @@ content-color = charcoal
 html
   overflow-x hidden
 
+#timeline-header
+  .header__logo--col-4-12
+    +tablet()
+      
+
+    +below(700px)
+      float left
+      width 30%
+
+  .header__social-nav--col-8-12
+    +below(700px)
+      float right
+      text-align right
+      width 65%
+
 .timeline
   position relative
   overflow-x hidden
@@ -48,7 +63,7 @@ html
 
   .dsk-info
     padding-bottom 0
-    
+
     h2
       display none
 
@@ -187,16 +202,16 @@ html
     opacity 0
     display table
     pointer-events none
-    
+
     +desktop()
       bottom 6rem
       min-height 400px
       width 1000px
       left -300px
-      
+
     +mobile()
       top -1000px
-  
+
   .no-image
     text-align center
 
@@ -236,7 +251,7 @@ html
     vertical-align middle
     height 500px
     width 50%
-    
+
     +mobile()
       display table-row
     // position absolute
@@ -255,7 +270,7 @@ html
 @media screen, (max-width: 650px)
   .dsk-supported
     height 400px
-    
+
 #step-0
   p
     display block
@@ -264,10 +279,10 @@ html
 
   .mobile-only
     display none
-    
+
     +mobile()
       display block
-      
+
 #back-to-top
   display block
   position fixed
@@ -277,26 +292,26 @@ html
   color darkgreen
   +desktop()
     display none
-    
+
 .read-more-link
   color darkgreen
   fill darkgreen
-  
+
   & > .icon--ei-external-link
     left -5px
-      
+
   &:hover
     fill nightgreen
-    
+
 .video-popup
   margin 0 auto
   overflow hidden
   position relative
   width 60%
-  
+
   +tablet()
     width 80%
-  
+
   +mobile()
     width 100%
 
