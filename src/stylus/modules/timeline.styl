@@ -38,7 +38,18 @@ html
     &:hover
       color nightgreen
 
+  .overlay
+    position absolute
+    width 100%
+    height 100%
+    background black
+    opacity 0.5
+    z-index 2
+    display none
+
 #timeline-header
+  z-index 3
+
   +mobile()
     padding 1em
 
@@ -47,13 +58,18 @@ html
       float left
       vertical-align super
       position absolute
-      width 33%
+      width 70%
+
+      &.move
+        opacity 0.5
 
     .header__social-nav--col-8-12
       display inline-block
+      position relative
       float right
       text-align right
       width 80%
+      z-index 3
 
     .social
       display none
@@ -61,6 +77,8 @@ html
     #toggle.move
       margin-right 185px
 
+#dasky.move
+  opacity 0.5
 
 /*----------------------------------------------------------------*
  * Timeline Styles

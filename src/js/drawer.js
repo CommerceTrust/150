@@ -5,6 +5,7 @@ jQuery(function($){
 
   $btn.on( "click", toggle_menu);
 
+
   // Make sure to close menu when jumping to another part of the timeline
   var $drawer_links = $("#drawer a:not(:first-child)")
 
@@ -12,6 +13,8 @@ jQuery(function($){
 
   function toggle_menu() {
     $btn.toggleClass( 'move' );
+    $nav.toggleClass( 'move' );
+    $('#dasky').toggleClass( 'move' );
     $drawer.toggleClass( 'slide' );
 
     $icon = $("#toggle i");
