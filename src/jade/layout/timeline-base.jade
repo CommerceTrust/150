@@ -21,11 +21,8 @@ html
     script(src='js/lightbox.js')
     script(type="text/javascript").
       $( document ).ready( function(){
-        var d = $('#dasky').Dasky({mousewheel: false});
-        console.log(d);
+        $('#dasky').Dasky({mousewheel: false});
         $('body').removeClass('hidden--opacity');
-        $('body').attr('style','height: 100%; overflow: visible;');
-        $('.video-trigger').on('click', $('.dsk-autoplay').click());
       });
 
     link(rel="shortcut icon", sizes="16x16 24x24 32x32 48x48 64x64", href="favicon.ico")
@@ -41,6 +38,7 @@ html
     meta(name="msapplication-TileColor", content="#006547")
 
   body.timeline.hidden--opacity
+    .overlay
     
     #drawer
       a(class="video-trigger" href="#") Watch video

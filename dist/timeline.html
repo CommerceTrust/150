@@ -18,11 +18,8 @@
     <script src="js/lightbox.js"></script>
     <script type="text/javascript">
       $( document ).ready( function(){
-        var d = $('#dasky').Dasky({mousewheel: false});
-        console.log(d);
+        $('#dasky').Dasky({mousewheel: false});
         $('body').removeClass('hidden--opacity');
-        $('body').attr('style','height: 100%; overflow: visible;');
-        $('.video-trigger').on('click', $('.dsk-autoplay').click());
       });
       
     </script>
@@ -39,6 +36,7 @@
     <meta name="msapplication-TileColor" content="#006547">
   </head>
   <body class="timeline hidden--opacity">
+    <div class="overlay"></div>
     <div id="drawer"><a href="#" class="video-trigger">Watch video</a><a href="#step-0">Welcome</a><a href="#step-1">1865 - 1900</a><a href="#step-8">1901 - 1920</a><a href="#step-17">1921 - 1940</a><a href="#step-24">1941 - 1960</a><a href="#step-29">1961 - 1980</a><a href="#step-34">1981 - 2000</a><a href="#step-43">2001 - Present</a><a href="img/timeline.pdf" download>Download Timeline</a><a href="http://www.facebook.com/commercebank" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="http://www.linkedin.com/company/commerce_bank" target="_blank" class="social"><i class="fa fa-linkedin-square"></i></a><a href="https://twitter.com/CommerceBank?rd=1" target="_blank" class="social"><i class="fa fa-twitter"></i></a></div><a id="back-to-top" href="#timeline-header"><i class="fa fa-arrow-up fa-2x"></i></a>
     <header id="timeline-header" class="header">
       <div class="header__logo--col-4-12"><a href="index.html"><img src="img/CommerceFDIC.png" alt="Commerce Bank logo"></a></div>

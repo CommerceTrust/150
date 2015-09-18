@@ -12,11 +12,9 @@ jQuery(function($){
   $drawer_links.on( "click", toggle_menu);
 
   function toggle_menu() {
-    $("body").toggleClass( 'move' );
-    if ($("body").hasClass( 'move' )) {
-      $("body").css("overflow-x: visible;")
-    }
-
+    $btn.toggleClass( 'move' );
+    $nav.toggleClass( 'move' );
+    $('#dasky').toggleClass( 'move' );
     $drawer.toggleClass( 'slide' );
 
     $icon = $("#toggle i");
