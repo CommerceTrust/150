@@ -5,13 +5,18 @@ jQuery(function($){
 
   $btn.on( "click", toggle_menu);
 
+
   // Make sure to close menu when jumping to another part of the timeline
   var $drawer_links = $("#drawer a:not(:first-child)")
 
   $drawer_links.on( "click", toggle_menu);
 
   function toggle_menu() {
-    $btn.toggleClass( 'move' );
+    $("body").toggleClass( 'move' );
+    if ($("body").hasClass( 'move' )) {
+      $("body").css("overflow-x: visible;")
+    }
+
     $drawer.toggleClass( 'slide' );
 
     $icon = $("#toggle i");

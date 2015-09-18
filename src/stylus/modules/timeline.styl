@@ -6,7 +6,6 @@ html
 
 .timeline
   position relative
-  overflow-x hidden
 
   // Welcome slide content changes on mobile/not-mobile.
   #step-0
@@ -38,6 +37,12 @@ html
     &:hover
       color nightgreen
 
+// Slide content over when drawer opens
+body.timeline.move
+  transition transform .5s ease-in-out
+  transform translateX(-200px)
+  overflow-x visible
+
 #timeline-header
   +mobile()
     padding 1em
@@ -47,7 +52,7 @@ html
       float left
       vertical-align super
       position absolute
-      width 33%
+      width 70%
 
     .header__social-nav--col-8-12
       display inline-block

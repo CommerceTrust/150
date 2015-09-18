@@ -18,8 +18,11 @@
     <script src="js/lightbox.js"></script>
     <script type="text/javascript">
       $( document ).ready( function(){
-        $('#dasky').Dasky({mousewheel: false});
+        var d = $('#dasky').Dasky({mousewheel: false});
+        console.log(d);
         $('body').removeClass('hidden--opacity');
+        $('body').attr('style','height: 100%; overflow: visible;');
+        $('.video-trigger').on('click', $('.dsk-autoplay').click());
       });
       
     </script>
