@@ -38,6 +38,30 @@ html
     &:hover
       color nightgreen
 
+#timeline-header
+  +mobile()
+    padding 1em
+
+    .header__logo--col-4-12
+      display inline-block
+      float left
+      vertical-align super
+      position absolute
+      width 33%
+
+    .header__social-nav--col-8-12
+      display inline-block
+      float right
+      text-align right
+      width 80%
+
+    .social
+      display none
+
+    #toggle.move
+      margin-right 185px
+
+
 /*----------------------------------------------------------------*
  * Timeline Styles
  *----------------------------------------------------------------*/
