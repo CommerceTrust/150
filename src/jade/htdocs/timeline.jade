@@ -20,7 +20,7 @@ block content
         .dsk-content(class = slide.img ? undefined : "no-image")
           .dsk-info
             h2.date__heading=slide.year
-            p=slide.content
+            p!=slide.content
             if slide.mobile_content
               p.mobile-content=slide.mobile_content
             if slide.read_more_link
